@@ -1,0 +1,1 @@
+# jfdzr7-team-sasiedzi
