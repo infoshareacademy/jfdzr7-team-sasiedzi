@@ -1,5 +1,4 @@
 {
-  
   "ignorePatterns": ["src/serviceWorker.ts"],
   "extends": [
     "plugin:react-hooks/recommended",
@@ -12,14 +11,17 @@
   ],
   "plugins": ["prettier", "import"],
   "rules": {
-    "prettier/prettier": ["error", {
-      "printWidth": 120,
-      "tabWidth": 2,
-      "singleQuote": true,
-      "trailingComma": "all",
-      "proseWrap": "always"
-    }
-  ],
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "proseWrap": "always",
+        "endOfLine": "auto"
+      }
+    ],
     "no-console": "warn",
 
     "react/jsx-props-no-spreading": "off",
@@ -30,7 +32,11 @@
     "import/order": [
       "error",
       {
-        "groups": [["external", "builtin"], ["parent","internal"], ["index", "sibling"]],
+        "groups": [
+          ["external", "builtin"],
+          ["parent", "internal"],
+          ["index", "sibling"]
+        ],
         "newlines-between": "always"
       }
     ],
