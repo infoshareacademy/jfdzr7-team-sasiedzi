@@ -1,7 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable prettier/prettier */
 import { useState } from "react";
 import { addDoc } from "firebase/firestore";
+
 import { usersData } from "../helpers/apiCommunication";
-import { isPasswordValid } from "../helpers/validation";
+import { isPasswordValid } from '../helpers/validation';
 export const Registration = () => {
   const defaultFormState = {
     firstName: "",

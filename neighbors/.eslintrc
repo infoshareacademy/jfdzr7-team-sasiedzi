@@ -1,0 +1,83 @@
+{
+  "ignorePatterns": ["src/serviceWorker.ts"],
+  "extends": [
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:jest/recommended",
+    "plugin:testing-library/react"
+  ],
+  "plugins": ["prettier", "import"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "proseWrap": "always",
+        "endOfLine": "auto"
+      }
+    ],
+    "no-console": "warn",
+
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/display-name": "off",
+
+    "import/no-default-export": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["external", "builtin"],
+          ["parent", "internal"],
+          ["index", "sibling"]
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "moduleDirectory": ["node_modules", "src/"],
+        "extensions": [".ts", ".tsx"]
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/!(setupTests|test/utils|*.spec.*|*.test.*).ts?x"],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "error",
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.test.tsx"],
+      "rules": {
+        "testing-library/prefer-screen-queries": "off",
+        "react/react-in-jsx-scope": "off",
+        "testing-library/no-container": "off"
+      }
+    }
+  ]
+}
