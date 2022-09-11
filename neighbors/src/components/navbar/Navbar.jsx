@@ -5,13 +5,19 @@ import styles from './Navbar.module.css';
 export const Navbar = () => {
   return (
     <div className={styles.wrapper}>
-      <Link to={`/help`}>Chcę pomóc</Link>
-      <Link to={`/`}>Potrzebuję pomocy</Link>
-      <Link to={`/`}>Jak to działa?</Link>
-      <button className={styles.button}>
+      <Link className={styles.link1} to={`/help`}>
+        Chcę pomóc
+      </Link>
+      <Link className={styles.link} to={`/need`}>
+        Potrzebuję pomocy
+      </Link>
+      <Link className={styles.link} to={`/how`}>
+        Jak to działa?
+      </Link>
+      <button className={styles.btn}>
         <Link to={`/profil`}>Profil</Link>
       </button>
-      <button>wyloguj się</button>
+      <button className={styles['btn-2']}>wyloguj się</button>
     </div>
   );
 };
