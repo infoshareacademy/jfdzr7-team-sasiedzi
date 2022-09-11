@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
 import { AuthImage } from '../AuthImage';
-import RegisterImg from '../../img/register.svg';
+import LogImg from '../../img/login.svg';
 
-export const RightPanel = ({ handleClick }) => {
+export const LeftPanel = ({ handleClick }) => {
   return (
-    <div className="panel right-panel">
+    <div className="panel left-panel">
       <div className="content">
-        <h3>One of us?</h3>
+        <h3>New here?</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
           dolorum expedita?
@@ -15,16 +15,16 @@ export const RightPanel = ({ handleClick }) => {
         <button
           onClick={handleClick}
           className="btn transparent"
-          id="sign-in-btn"
+          id="sign-up-btn"
         >
-          Sign in
+          Sign up
         </button>
       </div>
-      <AuthImage imageSrc={RegisterImg} />
+      <AuthImage imageSrc={LogImg} />
     </div>
   );
 };
 
-RightPanel.propTypes = {
+LeftPanel.propTypes = {
   handleClick: PropTypes.func,
 };

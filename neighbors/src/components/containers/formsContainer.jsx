@@ -1,5 +1,5 @@
-import { Login } from '../login/Login';
-import { Registration } from '../singUp/Registration';
+import { Login } from '../Login/Login';
+import { Registration } from '../RegistrationForm/RegistrationForm';
 import '../mainLayout.css';
 
 export function FormsContainer() {

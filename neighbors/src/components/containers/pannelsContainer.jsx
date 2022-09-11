@@ -1,12 +1,19 @@
-import { LeftPanel } from '../pannels/left-panel';
-import { RightPanel } from '../pannels/right-panel';
+import PropTypes from 'prop-types';
+
+import { LeftPanel } from '../pannels/LeftPanel';
+import { RightPanel } from '../pannels/Right-Panel';
+
 import '../mainLayout.css';
 
-export function PannelsContainer() {
+export const PannelsContainer = ({ onClick }) => {
   return (
     <div className="pannels-container">
-      <LeftPanel></LeftPanel>
-      <RightPanel></RightPanel>
+      <LeftPanel handleClick={onClick} />
+      <RightPanel handleClick={onClick} />
     </div>
   );
-}
+};
+
+PannelsContainer.propTypes = {
+  onClick: PropTypes.func,
+};
