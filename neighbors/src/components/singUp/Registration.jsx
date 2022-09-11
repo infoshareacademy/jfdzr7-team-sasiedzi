@@ -1,4 +1,4 @@
-import React from 'react';
+import '../mainLayout.css';
 
 export function Registration() {
   return (

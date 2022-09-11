@@ -1,10 +1,10 @@
 import './App.css';
-import { Registration } from './components/registration';
+import { Container } from './components/containers/container';
 
 export const App = () => {
   return (
     <>
-      <Registration></Registration>
+      <Container></Container>
     </>
   );
 };
