@@ -30,14 +30,13 @@
 
     "import/no-default-export": "error",
     "import/order": [
-      "error",
+      "warn",
       {
         "groups": [
           ["external", "builtin"],
           ["parent", "internal"],
           ["index", "sibling"]
-        ],
-        "newlines-between": "always"
+        ]
       }
     ],
     "@typescript-eslint/no-explicit-any": "error",
@@ -51,7 +50,7 @@
       "node": {
         "paths": ["src"],
         "moduleDirectory": ["node_modules", "src/"],
-        "extensions": [".ts", ".tsx"]
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
       }
     },
     "react": {
