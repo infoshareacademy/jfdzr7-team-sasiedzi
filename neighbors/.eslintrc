@@ -1,13 +1,45 @@
 {
-    "ignorePatterns": ["src/serviceWorker.ts"],
-    "extends": [
-      "plugin:react-hooks/recommended",
-      "plugin:react/recommended",
-      "plugin:prettier/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:jest-dom/recommended",
-      "plugin:jest/recommended",
-      "plugin:testing-library/react"
+  "ignorePatterns": ["src/serviceWorker.ts"],
+  "extends": [
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:jest/recommended",
+    "plugin:testing-library/react"
+  ],
+  "plugins": ["prettier", "import"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "printWidth": 120,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "proseWrap": "always",
+        "endOfLine": "auto"
+      }
+    ],
+    "no-console": "warn",
+
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+
+    "import/no-default-export": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["external", "builtin"],
+          ["parent", "internal"],
+          ["index", "sibling"]
+        ],
+        "newlines-between": "always"
+      }
     ],
     "plugins": ["prettier", "import"],
     "rules": {
