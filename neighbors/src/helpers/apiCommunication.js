@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { collection, onSnapshot, doc, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot, doc } from 'firebase/firestore';
 import { useEffect, useState, createContext } from 'react';
 import { PropTypes } from 'prop-types';
 
@@ -28,5 +28,3 @@ export const ThemeProvider = ({ children }) => {
 ThemeProvider.propTypes = {
   children: PropTypes.any,
 };
-
-const getPosts = await getDocs(collection(db, 'Posts-need-help'));

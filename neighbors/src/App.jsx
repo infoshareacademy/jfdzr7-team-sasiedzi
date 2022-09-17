@@ -1,10 +1,9 @@
-import { Container } from './components/reistration';
+import { Registration } from './components/registration';
 
 export const App = () => {
   return (
     <>
-      <Container></Container>
-
+      <Registration />
     </>
   );
 };
