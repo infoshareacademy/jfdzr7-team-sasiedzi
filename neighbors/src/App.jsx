@@ -1,11 +1,10 @@
-import { PostList } from './components/posts/post-list';
-import { Registration } from './components/registration';
+import { Container } from './components/reistration';
 
 export const App = () => {
   return (
     <>
-      <PostList></PostList>
-      <Registration></Registration>
+      <Container></Container>
+
     </>
   );
 };
