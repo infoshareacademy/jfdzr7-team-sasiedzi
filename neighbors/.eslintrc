@@ -14,7 +14,6 @@
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 120,
         "tabWidth": 2,
         "singleQuote": true,
         "trailingComma": "all",
@@ -27,6 +26,7 @@
     "react/jsx-props-no-spreading": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
 
     "import/no-default-export": "error",
     "import/order": [
