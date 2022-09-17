@@ -1,10 +1,11 @@
-import { Container } from './components/reistration';
+import { Navbar } from './components/navbar/Navbar';
+import { Registration } from './components/registration';
 
 export const App = () => {
   return (
     <>
-      <Container></Container>
-
+      <Navbar />
+      <Registration />
     </>
   );
 };

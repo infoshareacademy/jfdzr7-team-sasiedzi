@@ -37,7 +37,6 @@ export const Registration = () => {
   };
 
   return (
-
     <>
       <form className="m-50">
         <div>
