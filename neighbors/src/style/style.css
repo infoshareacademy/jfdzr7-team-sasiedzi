@@ -24,7 +24,7 @@ body {
     background-color: var(--color-green);
     transition: all 0.2s;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
     color: var(--color-green);
     background-color: #fff;
 }
@@ -32,7 +32,7 @@ body {
     border: solid 2px var(--color-secondary);
     background-color: var(--color-secondary);
 }
-.btn-2:hover {
+.btn-2:hover, .btn-2:focus {
     color: var(--color-secondary);
     background-color: #fff;
 }
