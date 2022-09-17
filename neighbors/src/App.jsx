@@ -1,10 +1,10 @@
 import './App.css';
-import { Container } from './components/reistration';
+import { Navbar } from './components/navbar/Navbar';
 
 export const App = () => {
   return (
     <>
-      <Container></Container>
+      <Navbar />
     </>
   );
 };
