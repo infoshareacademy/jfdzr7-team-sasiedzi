@@ -1,5 +1,5 @@
 import './App.css';
-import { Container } from './components/containers/Container';
+import { Container } from './components/reistration';
 
 export const App = () => {
   return (

@@ -1,8 +1,8 @@
 import '../mainLayout.css';
 import { useRef } from 'react';
 
-import { FormsContainer } from './FormsContainer';
-import { PannelsContainer } from './PannelsContainer';
+import { FormsContainer } from './formsContainer';
+import { PannelsContainer } from './pannelsContainer';
 
 export function Container() {
   const containerRef = useRef(null);

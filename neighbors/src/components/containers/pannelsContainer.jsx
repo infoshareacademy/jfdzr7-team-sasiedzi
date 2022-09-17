@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
-import { LeftPanel } from '../pannels/LeftPanel';
-import { RightPanel } from '../pannels/Right-Panel';
+import { LeftPanel } from '../pannels/leftPanel';
+import { RightPanel } from '../pannels/rightPanel';
 
 import '../mainLayout.css';
 
