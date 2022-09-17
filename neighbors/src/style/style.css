@@ -5,9 +5,13 @@
     --color-black: #323232;
     --color-gray: #F6F6F6;
 }
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
+    color: var(--color-black);
 }
 .btn {
     display: block;
@@ -37,13 +41,15 @@ body {
     color: var(--color-secondary);
     background-color: #fff;
 }
-.cart {
+.card {
     background-color: #fff;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
+    width: 100%;
 }
 .input-field {
     background-color: #f0f0f0;
+    height: 30px;
     margin: 10px 0;
     border-radius: 55px;
     padding: 10px;
@@ -62,5 +68,15 @@ body {
     color: #acacac;
     font-size: 14px;
   }
-  
-  
+
+  .header-1 {
+      font-weight: bold;
+      color: var(--color-black);
+      font-size: 24px;
+      text-transform: uppercase;
+  }
+  .header-2 {
+      font-weight: bold;
+      color: var(--color-black);
+      font-size: 18px;
+  }

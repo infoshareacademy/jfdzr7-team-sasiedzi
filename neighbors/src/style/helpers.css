@@ -10,8 +10,17 @@
 .bg-gray {
     background-color: var(--color-gray);
 }
+.bg-white {
+    background-color: #fff;
+}
 .bg-gradient {
     background: radial-gradient(100% 197.75% at 0% 6.01%, #00BFA6 34.04%, #FFFFFF 34.05%, #F5F5F5 100%) no-repeat;
+    background-attachment: fixed;
+}
+.no-wrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 /* ##### MARGIN & PADDING ##### */
 .m-0, .nom {margin: 0 !important;}
@@ -156,3 +165,5 @@
 .fs-50 {font-size: 50px !important;}
 .fs-60 {font-size: 60px !important;}
 .fs-100 {font-size: 100px !important;}
+
+.fw-bold {font-weight: bold;}
