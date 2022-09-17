@@ -42,36 +42,79 @@ export const Registration = () => {
       <form className="m-50">
         <div>
           <label htmlFor="firstName">First name: </label>
-          <input type="text" id="firstName" value={newUser.firstName} name="firstName" onChange={onChange}></input>
+          <input
+            className="input-field"
+            type="text"
+            id="firstName"
+            value={newUser.firstName}
+            name="firstName"
+            onChange={onChange}
+          ></input>
         </div>
 
         <div>
           <label htmlFor="lastName">Last name: </label>
-          <input type="text" id="lastName" value={newUser.lastName} name="lastName" onChange={onChange}></input>
+          <input
+            className="input-field"
+            type="text"
+            id="lastName"
+            value={newUser.lastName}
+            name="lastName"
+            onChange={onChange}
+          ></input>
         </div>
 
         <div>
           <label htmlFor="birthDate">Birth date: </label>
-          <input type="text" id="birthDate" value={newUser.birthDate} name="birthDate" onChange={onChange}></input>
+          <input
+            className="input-field"
+            type="text"
+            id="birthDate"
+            value={newUser.birthDate}
+            name="birthDate"
+            onChange={onChange}
+          ></input>
         </div>
 
         <div>
           <label htmlFor="email">Email: </label>
-          <input type="email" id="email" value={newUser.email} name="email" onChange={onChange}></input>
+          <input
+            className="input-field"
+            type="email"
+            id="email"
+            value={newUser.email}
+            name="email"
+            onChange={onChange}
+          ></input>
         </div>
 
         <div>
           <label htmlFor="city">City: </label>
-          <input type="text" id="city" value={newUser.city} name="city" onChange={onChange}></input>
+          <input
+            className="input-field"
+            type="text"
+            id="city"
+            value={newUser.city}
+            name="city"
+            onChange={onChange}
+          ></input>
         </div>
         <div>
           <label htmlFor="street">Street: </label>
-          <input type="text" id="street" value={newUser.street} name="street" onChange={onChange}></input>
+          <input
+            className="input-field"
+            type="text"
+            id="street"
+            value={newUser.street}
+            name="street"
+            onChange={onChange}
+          ></input>
         </div>
 
         <div>
           <label htmlFor="houseNumber">House number: </label>
           <input
+            className="input-field"
             type="text"
             id="houseNumber"
             value={newUser.houseNumber}
@@ -83,6 +126,7 @@ export const Registration = () => {
         <div>
           <label htmlFor="phoneNumber">Phone number: </label>
           <input
+            className="input-field"
             type="text"
             id="phoneNumber"
             value={newUser.phoneNumber}
@@ -92,7 +136,14 @@ export const Registration = () => {
         </div>
         <div>
           <label htmlFor="password">Password: </label>
-          <input type="password" id="password" value={newUser.password} name="password" onChange={onChange}></input>
+          <input
+            className="input-field"
+            type="password"
+            id="password"
+            value={newUser.password}
+            name="password"
+            onChange={onChange}
+          ></input>
         </div>
         {/* {Error section} */}
         {error && <p>{error}</p>}
