@@ -38,7 +38,7 @@ export const Registration = () => {
 
   return (
     <>
-      <form>
+      <form className="m-50">
         <div>
           <label htmlFor="firstName">First name: </label>
           <input type="text" id="firstName" value={newUser.firstName} name="firstName" onChange={onChange}></input>
@@ -95,7 +95,7 @@ export const Registration = () => {
         </div>
         {/* {Error section} */}
         {error && <p>{error}</p>}
-        <button type="submit" onClick={onClick}>
+        <button className="btn" type="submit" onClick={onClick}>
           {' '}
           Submit
         </button>
