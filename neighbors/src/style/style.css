@@ -68,6 +68,7 @@ body {
     color: #acacac;
     font-size: 14px;
   }
+
   .header-1 {
       font-weight: bold;
       color: var(--color-black);
@@ -79,4 +80,3 @@ body {
       color: var(--color-black);
       font-size: 18px;
   }
-  
