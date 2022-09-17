@@ -17,7 +17,9 @@ export const Navbar = () => {
       <button className={styles.btn}>
         <Link to={`/profil`}>Profil</Link>
       </button>
-      <button className={styles['btn-2']}>wyloguj się</button>
+      <button className={styles['btn-2']}>
+        <Link to={`/logout`}>wyloguj się</Link>
+      </button>
     </div>
   );
 };
