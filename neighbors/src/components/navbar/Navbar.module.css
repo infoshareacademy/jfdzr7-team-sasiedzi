@@ -12,16 +12,17 @@ body {
 
 .wrapper {
   box-sizing: border-box;
-  max-width: 100em;
+  /* max-width: 100em; */
   display: flex;
   flex-direction: row nowrap;
   justify-content: flex-end;
   align-items: center;
   padding: 20px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 50px;
   right: 10px;
+  left:10px;
   top: 15px;
   gap: 15px;
   padding: 15px;

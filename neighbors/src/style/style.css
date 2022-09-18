@@ -59,6 +59,20 @@ body {
     font-size: 14px;
     color: #333;
   }
+  .input-field-short {
+    background-color: #f0f0f0;
+    height: 30px;
+    max-width: 80px;
+    margin: 10px 0;
+    border-radius: 55px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+
   .input-field::placeholder {
     color: #aaa;
   }
