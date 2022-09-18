@@ -14,7 +14,7 @@ body {
     color: var(--color-black);
 }
 .btn {
-    display: block;
+    display: inline-block;
     padding: 0 10px;
     height: 30px;
     min-width: 100px;
