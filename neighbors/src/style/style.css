@@ -106,6 +106,7 @@ body {
     background-color: #fff;
     position: sticky;
     top: 0;
+    z-index: 9;
 }
 .navbar a {
     margin-left: 15px;
@@ -143,7 +144,7 @@ body {
     left: 0;
     height: 0%;
     width: 100%;
-    z-index: 3;
+    z-index: 10;
     overflow-x: hidden;
     background-color: var(--color-gray);
     background-color: rgba(246, 246, 246, 0.95);

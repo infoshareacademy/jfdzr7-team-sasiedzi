@@ -78,11 +78,11 @@ form.sign-up-form {
   padding: 0 0.4rem;
 }
 
-.input-field i {
-  text-align: center;
-  line-height: 55px;
+.input-field .icon {
   color: #acacac;
   font-size: 1.1rem;
+  margin: 7px;
+  margin-left: 20px;
 }
 
 .input-field input {
@@ -100,24 +100,6 @@ form.sign-up-form {
   color: #aaa;
 }
 
-.btn {
-  width: 150px;
-  height: 50px;
-  border: none;
-  outline: none;
-  border-radius: 50px;
-  cursor: pointer;
-  background-color: #00bfa6;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 10px 0;
-  transition: 0.5s;
-}
-
-.btn:hover {
-  background-color: #06a28d;
-}
 
 .pannels-container {
   position: absolute;
@@ -165,13 +147,14 @@ form.sign-up-form {
 }
 
 .btn.transparent {
-  margin: 0;
-  background: none;
+  background: #00000000;
   border: 2px solid #fff;
-  width: 130px;
-  height: 41px;
-  font-weight: 600;
-  font-size: 0.8rem;
+  color: #fff;
+}
+.btn.transparent:hover {
+  background: #fff;
+  border: 2px solid #fff;
+  color: var(--color-green);
 }
 
 .image {
