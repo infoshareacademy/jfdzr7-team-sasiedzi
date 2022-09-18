@@ -4,7 +4,7 @@ import '../mainLayout.css';
 
 export function FormsContainer() {
   return (
-    <div className='signin-signup'>
+    <div className="signin-signup">
       <Login></Login>
       <Registration></Registration>
     </div>
