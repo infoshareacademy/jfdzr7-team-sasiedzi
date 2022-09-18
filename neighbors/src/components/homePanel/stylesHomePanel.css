@@ -1,62 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
-
-* {
-  box-sizing: border-box;
+#body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #e4e4e4;
+}
+#main-container {
+  width: 90%;
+  height: 305px;
 }
 
-body {
-  font-family: 'Muli', sans-serif;
+#slider {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  /* overflow-x: scroll; */
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+/* #slider::-webkit-scrollbar {
+  display: none;
+} */
+
+#main-container {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
 }
 
-.container {
-  display: flex;
-  width: 90vw;
+.slider-card-title,
+.slider-card-description {
+  margin: 5px 0px 5px 10px;
 }
 
-.panel {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 80vh;
-  border-radius: 50px;
-  color: #fff;
-  cursor: pointer;
-  flex: 0.5;
-  margin: 10px;
-  position: relative;
-  transition: flex 0.7s ease-in;
+.slider-card-title {
+  font-weight: 500;
+  margin-top: 10px;
 }
 
-.panel h3 {
-  font-size: 24px;
+.slider-card-description {
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+.slider-card-image {
+  width: 100%;
+  height: 220px;
+  background-color: rgb(240 240 240 / 80%);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.slider-icon.left,
+.slider-icon.right {
+  background: white;
+  border-radius: 100%;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  margin: 0;
-  opacity: 0;
+  opacity: 0.5;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+  cursor: pointer;
 }
 
-.panel.active {
-  flex: 5;
+.slider-icon.left {
+  left: 0;
 }
 
-.panel.active h3 {
+.slider-icon.right {
+  right: 0;
+}
+
+.slider-icon.left:hover,
+.slider-icon.right:hover {
   opacity: 1;
-  transition: opacity 0.3s ease-in 0.4s;
 }
-@media (max-width: 480px) {
-  .container {
-    width: 100vw;
-  }
 
-  .panel:nth-of-type(4),
-  .panel:nth-of-type(5) {
-    display: none;
-  }
+.slider-card {
+  width: 320px;
+  height: 300px;
+  background: white;
+  border-radius: 10px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
+  cursor: pointer;
 }

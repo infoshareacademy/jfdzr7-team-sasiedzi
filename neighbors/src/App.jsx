@@ -1,10 +1,9 @@
 import './App.css';
-import { Registration } from './components/registration';
-
+import { HomePanel } from './components/homePanel/HomePanel';
 export const App = () => {
   return (
     <>
-      <Registration></Registration>
+      <HomePanel />
     </>
   );
 };
