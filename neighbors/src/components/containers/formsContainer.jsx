@@ -1,4 +1,4 @@
-import { Login } from '../Login/Login';
+import { Login } from '../login/Login';
 import { Registration } from '../RegistrationForm/RegistrationForm';
 import '../mainLayout.css';
 
