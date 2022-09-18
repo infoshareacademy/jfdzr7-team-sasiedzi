@@ -1,8 +1,10 @@
+import '../mainLayout.css';
+
 import { useState } from 'react';
 import { addDoc } from 'firebase/firestore';
 
-import { usersData } from '../helpers/apiCommunication';
-import { isPasswordValid } from '../helpers/validation';
+import { usersData } from '../../helpers/apiCommunication';
+import { isPasswordValid } from '../../helpers/validation';
 export const Registration = () => {
   const defaultFormState = {
     firstName: '',
@@ -37,102 +39,113 @@ export const Registration = () => {
 
   return (
     <>
-      <form className='m-50'>
-        {/* <form action='' className='sign-up-form'> */}
-        <h2 className='title'>Sign up</h2>
+      <form action="" className="sign-up-form">
+        <h2 className="title">Sign up</h2>
         <div>
-          <label htmlFor='firstName'>First name: </label>
+          <label htmlFor="firstName">First name: </label>
           <input
-            className='input-field'
-            type='text'
-            id='firstName'
+            className="input-field"
+            type="text"
+            id="firstName"
             value={newUser.firstName}
-            name='firstName'
+            name="firstName"
             onChange={onChange}
           ></input>
         </div>
 
         <div>
-          <label htmlFor='lastName'>Last name: </label>
+          <label htmlFor="lastName">Last name: </label>
           <input
-            className='input-field'
-            type='text'
-            id='lastName'
+            className="input-field"
+            type="text"
+            id="lastName"
             value={newUser.lastName}
-            name='lastName'
+            name="lastName"
             onChange={onChange}
           ></input>
         </div>
 
         <div>
-          <label htmlFor='email'>Email: </label>
+          <label htmlFor="email">Email: </label>
           <input
-            className='input-field'
-            type='email'
-            id='email'
+            className="input-field"
+            type="email"
+            id="email"
             value={newUser.email}
-            name='email'
+            name="email"
             onChange={onChange}
           ></input>
         </div>
 
         <div>
-          <label htmlFor='city'>City: </label>
+          <label htmlFor="city">City: </label>
           <input
-            className='input-field'
-            type='text'
-            id='city'
+            className="input-field"
+            type="text"
+            id="city"
             value={newUser.city}
-            name='city'
+            name="city"
             onChange={onChange}
           ></input>
         </div>
         <div>
-          <label htmlFor='street'>Street: </label>
+          <label htmlFor="street">Street: </label>
           <input
-            className='input-field'
-            type='text'
-            id='street'
+            className="input-field"
+            type="text"
+            id="street"
             value={newUser.street}
-            name='street'
+            name="street"
             onChange={onChange}
           ></input>
-          <label htmlFor='houseNumber'>No.: </label>
+          <label htmlFor="houseNumber">No.: </label>
           <input
-            className='input-field-short'
+            className="input-field-short"
+            type="text"
+            id="houseNumber"
+            value={newUser.houseNumber}
+            name="houseNumber"
+            onChange={onChange}
+          ></input>
+        </div>
+        {/* <div> */}
+        {/* <label htmlFor='houseNumber'>House number: </label>
+          <input
+            className='input-field'
             type='text'
             id='houseNumber'
             value={newUser.houseNumber}
             name='houseNumber'
             onChange={onChange}
-          ></input>
-        </div>
+          ></input> */}
+        {/* </div> */}
 
         <div>
-          <label htmlFor='phoneNumber'>Phone number: </label>
+          <label htmlFor="phoneNumber">Phone number: </label>
           <input
-            className='input-field'
-            type='text'
-            id='phoneNumber'
+            className="input-field"
+            type="text"
+            id="phoneNumber"
             value={newUser.phoneNumber}
-            name='phoneNumber'
+            name="phoneNumber"
             onChange={onChange}
           ></input>
         </div>
         <div>
-          <label htmlFor='password'>Password: </label>
+          <label htmlFor="password">Password: </label>
           <input
-            className='input-field'
-            type='password'
-            id='password'
+            className="input-field"
+            type="password"
+            id="password"
             value={newUser.password}
-            name='password'
+            name="password"
             onChange={onChange}
           ></input>
         </div>
         {/* {Error section} */}
         {error && <p>{error}</p>}
-        <button className='btn' type='submit' onClick={onClick}>
+        {/* <input type="submit" value="Sign up" className="btn solid" /> */}
+        <button className="btn" type="submit" onClick={onClick}>
           {' '}
           Submit
         </button>
