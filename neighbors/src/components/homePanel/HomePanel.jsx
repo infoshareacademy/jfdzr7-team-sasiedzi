@@ -1,5 +1,4 @@
 import './stylesHomePanel.css';
-// import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 export const HomePanel = () => {
   const slides = [
@@ -23,30 +22,11 @@ export const HomePanel = () => {
       title: 'This is a fourth title',
       description: 'This is a fourth description',
     },
-    // {
-    //   image: 'https://picsum.photos/400/300',
-    //   title: 'This is a fifth title',
-    //   description: 'This is a fifth description',
-    // },
   ];
-
-  // const slideLeft = () => {
-  //   var slider = document.getElementById('slider');
-  //   slider.scrollLeft = slider.scrollLeft + 500;
-  // };
-  // const slideRight = () => {
-  //   var slider = document.getElementById('slider');
-  //   slider.scrollRight = slider.scrollLeft - 500;
-  // };
 
   return (
     <div id="body">
       <div id="main-container">
-        {/* <MdChevronLeft
-          size={40}
-          className="slider-icon left"
-          onClick={slideLeft}
-        /> */}
         <div id="slider">
           {slides.map((slide, index) => {
             return (
@@ -64,11 +44,6 @@ export const HomePanel = () => {
             );
           })}
         </div>
-        {/* <MdChevronRight
-          size={40}
-          className="slider-icon right"
-          onClick={slideRight}
-        /> */}
       </div>
     </div>
   );
