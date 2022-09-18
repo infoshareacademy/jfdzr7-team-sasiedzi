@@ -1,16 +1,12 @@
-import { Navbar } from './components/navbar/Navbar';
-import { Container } from './components/containers/container';
-import { ThemeProvider } from './helpers/apiCommunication';
-import { ShowPosts } from './components/ShowPosts/ShowPosts';
+import { Route, Routes } from 'react-router-dom';
+
+import { PostDetails } from './components/posts/single-post';
 export const App = () => {
   return (
     <>
-      {' '}
-      <ThemeProvider>
-        <ShowPosts></ShowPosts>
-        {/* <Navbar />
-        <Container /> */}
-      </ThemeProvider>
+      <Routes>
+        <Route path="/post/:id" element={<PostDetails />} />
+      </Routes>
     </>
   );
 };
