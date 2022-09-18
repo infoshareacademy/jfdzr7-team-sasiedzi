@@ -12,7 +12,7 @@ export function Container() {
     containerRef.current.classList.toggle('sign-up-mode');
   };
   return (
-    <div className="container" ref={containerRef}>
+    <div className="home-container" ref={containerRef}>
       <FormsContainer />
       <PannelsContainer onClick={onButtonClick} />
     </div>

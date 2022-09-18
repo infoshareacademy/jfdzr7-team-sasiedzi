@@ -14,7 +14,7 @@ body {
     color: var(--color-black);
 }
 .btn {
-    display: block;
+    display: inline-block;
     padding: 0 10px;
     height: 30px;
     min-width: 100px;
@@ -60,6 +60,20 @@ body {
     font-size: 14px;
     color: #333;
   }
+  .input-field-short {
+    background-color: #f0f0f0;
+    height: 30px;
+    max-width: 80px;
+    margin: 10px 0;
+    border-radius: 55px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+  }
+
   .input-field::placeholder {
     color: #aaa;
   }
@@ -92,6 +106,7 @@ body {
     background-color: #fff;
     position: sticky;
     top: 0;
+    z-index: 9;
 }
 .navbar a {
     margin-left: 15px;
@@ -129,7 +144,7 @@ body {
     left: 0;
     height: 0%;
     width: 100%;
-    z-index: 3;
+    z-index: 10;
     overflow-x: hidden;
     background-color: var(--color-gray);
     background-color: rgba(246, 246, 246, 0.95);
