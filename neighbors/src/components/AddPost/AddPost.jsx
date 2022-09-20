@@ -1,7 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { addDoc } from 'firebase/firestore';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComments } from '@fortawesome/free-solid-svg-icons';
+import '../AddPost/AddPostLayout.css';
 
 import { ThemeContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
+
 export const AddPost = () => {
   const { user } = useContext(ThemeContext); // Zalogowany user na potrzeby testów
   const [chooseTypeOfPost, setTypeOfPost] = useState('');
@@ -45,34 +49,49 @@ export const AddPost = () => {
     setPostData({ post: '', postTitle: '' });
   };
   return (
-    <>
-      <form>
-        <label htmlFor="TypeOfPost">Choose type of post: </label>
-        <select name="typOfPost" onChange={onChangleSelectPost}>
-          <option value=" "></option>
-          <option value="NeedHelp">Need help</option>
-          <option value="OfferHelp">Offer help</option>
-        </select>
-        <label htmlFor="postTitle">Add title: </label>
-        <input
-          type="text"
-          disabled={notAvailbeToWritePost}
-          value={postData.postTitle}
-          name="postTitle"
-          onChange={onChange}
-        ></input>
-        <label htmlFor="post">Add new post: </label>
-        <textarea
-          name="post"
-          value={postData.post}
-          disabled={notAvailbeToWritePost}
-          placeholder="Share your needs or help."
-          onChange={onChange}
-        ></textarea>
-      </form>
-      <button disabled={notAvailbeToWritePost} type="submit" onClick={onClick}>
-        ADD POST
-      </button>
-    </>
+    <div className="bg-gradient">
+      <div className="container">
+        <div className="post-box">
+          <div className="left">
+            <FontAwesomeIcon className="icon" icon={faComments} />
+          </div>
+          <div className="right">
+            <form>
+              <label htmlFor="TypeOfPost">Choose type of post: </label>
+              <select name="typOfPost" onChange={onChangleSelectPost} className="field">
+                <option value=" "></option>
+                <option value="NeedHelp">Need help</option>
+                <option value="OfferHelp">Offer help</option>
+              </select>
+
+              <label htmlFor="postTitle">Add title: </label>
+              <input
+                type="text"
+                disabled={notAvailbeToWritePost}
+                value={postData.postTitle}
+                name="postTitle"
+                onChange={onChange}
+                className="field"
+              ></input>
+
+              {/* Message */}
+              <label htmlFor="post">Add new post: </label>
+              <textarea
+                name="post"
+                value={postData.post}
+                disabled={notAvailbeToWritePost}
+                placeholder="Share your needs or help."
+                className="field"
+                onChange={onChange}
+              ></textarea>
+            </form>
+
+            <button disabled={notAvailbeToWritePost} type="submit" onClick={onClick} className="btn">
+              ADD POST
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
