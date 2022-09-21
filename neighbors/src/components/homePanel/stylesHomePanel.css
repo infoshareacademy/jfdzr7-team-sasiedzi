@@ -5,11 +5,12 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  background: #e4e4e4;
+ 
 }
 #main-container {
   width: 90%;
   height: 305px;
+  
 }
 
 #slider {
@@ -59,4 +60,10 @@
   margin-right: 5px;
   box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 12%);
   cursor: pointer;
+}
+
+.icon {
+  font-size: 8em;
+  margin: 50px;
+  color: #acacac;
 }
