@@ -1,16 +1,8 @@
-import { Navbar } from './components/navbar/Navbar';
-import { Container } from './components/containers/container';
-import { ThemeProvider } from './helpers/apiCommunication';
-import { ShowPosts } from './components/ShowPosts/ShowPosts';
+import { PostList } from './components/posts/post-list';
 export const App = () => {
   return (
     <>
-      {' '}
-      <ThemeProvider>
-        <ShowPosts></ShowPosts>
-        {/* <Navbar />
-        <Container /> */}
-      </ThemeProvider>
+      <PostList />
     </>
   );
 };

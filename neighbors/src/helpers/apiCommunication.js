@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { collection, onSnapshot, doc, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, onSnapshot, doc, query, orderBy } from 'firebase/firestore';
 import { useEffect, useState, createContext } from 'react';
 import { PropTypes } from 'prop-types';
 
