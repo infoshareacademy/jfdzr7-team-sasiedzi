@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, serverTimestamp } from 'firebase/firestore';
 
 import { ThemeContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
 export const AddPost = () => {
@@ -14,12 +14,8 @@ export const AddPost = () => {
     const { name, value } = e.target;
     setPostData({
       ...postData,
-      userFirstName: user.firstName,
-      userLastName: user.lastName,
-      userPhoneNumber: user.phoneNumber,
-      userCity: user.city,
-      userStreet: user.street,
-      userEmail: user.email,
+      createdAt: serverTimestamp(),
+      userID: user.uid,
       [name]: value,
     });
   };

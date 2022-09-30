@@ -1,8 +1,11 @@
 import '../mainLayout.css';
 
 import { useState } from 'react';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, setDoc, doc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 
+import { firebaseErrors } from '../../api/firebase';
+import { auth } from '../../api/firebase';
 import { usersData } from '../../helpers/apiCommunication';
 import { isPasswordValid } from '../../helpers/validation';
 export const Registration = () => {
@@ -33,8 +36,19 @@ export const Registration = () => {
       return;
     }
     setError('');
-    addDoc(usersData, newUser).then(() => {});
-    setNewUser(defaultFormState);
+    createUserWithEmailAndPassword(auth, newUser.email, newUser.password)
+      .then((jwt) => {
+        let storedUser = { ...newUser };
+        delete storedUser.password;
+        return setDoc(doc(usersData, jwt.user.uid), storedUser);
+      })
+      .then(() => {
+        signOut(auth);
+        setNewUser(defaultFormState);
+      })
+      .catch((e) => {
+        alert(firebaseErrors[e.code]);
+      });
   };
 
   return (
