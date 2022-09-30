@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 import { collection } from 'firebase/firestore';
 import { useEffect, useState, createContext } from 'react';
 import { PropTypes } from 'prop-types';
@@ -10,7 +9,7 @@ export const usersData = collection(db, 'Users');
 export const needHelpPostsData = collection(db, 'Posts-need-help');
 export const offerHelpPostsData = collection(db, 'Posts-offer-help');
 
-export const ThemeContext = createContext();
+export const UserContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuth, setIsAuth] = useState(null);
@@ -34,16 +33,11 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <>
-      <ThemeContext.Provider value={{ user }}>{children}</ThemeContext.Provider>
+      <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
     </>
   );
 };
 
 ThemeProvider.propTypes = {
   children: PropTypes.any,
-};
-
-const getDataOfLoggedUser = (authIdUser) => {
-  const q = query(usersData, where('uid', '==', authIdUser));
-  // const q = query(collection(db, "users"), where("uid", "==", user.uid));
 };

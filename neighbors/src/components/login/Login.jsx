@@ -18,11 +18,8 @@ export function Login() {
   const onClick = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, signIn.email, signIn.password)
-      .then((jwt) => {
-        console.log(jwt.user.uid);
-      })
+      .then((jwt) => {})
       .catch((e) => {
-        console.dir(e);
         alert(firebaseErrors[e.code]);
       });
   };

@@ -1,4 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+
+import { auth } from '../../api/firebase';
 
 function openNav() {
   document.getElementById('mobileNav').style.height = '100%';
@@ -9,6 +12,9 @@ function closeNav() {
 }
 
 export const Navbar = () => {
+  const onClickLogOut = () => {
+    signOut(auth);
+  };
   return (
     <>
       <nav className="navbar">
@@ -27,9 +33,9 @@ export const Navbar = () => {
           Profile
         </Link>
 
-        <Link className="btn btn-2" to={`/logout`}>
+        <button className="btn btn-2" onClick={onClickLogOut}>
           Log out
-        </Link>
+        </button>
         <button onClick={openNav} className="btn nav-hamburger">
           <div></div>
           <div></div>
@@ -56,9 +62,9 @@ export const Navbar = () => {
             Profile
           </Link>
 
-          <Link className="btn btn-2" to={`/logout`}>
+          <button className="btn btn-2" onClick={onClickLogOut}>
             Log out
-          </Link>
+          </button>
         </div>
       </nav>
     </>

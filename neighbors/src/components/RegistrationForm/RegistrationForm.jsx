@@ -76,7 +76,7 @@ export const Registration = () => {
             value={newUser.lastName}
             name="lastName"
             onChange={onChange}
-          ></input>
+          />
         </div>
 
         <div>
@@ -88,19 +88,12 @@ export const Registration = () => {
             value={newUser.email}
             name="email"
             onChange={onChange}
-          ></input>
+          />
         </div>
 
         <div>
           <label htmlFor="city">City: </label>
-          <input
-            className="input-field"
-            type="text"
-            id="city"
-            value={newUser.city}
-            name="city"
-            onChange={onChange}
-          ></input>
+          <input className="input-field" type="text" id="city" value={newUser.city} name="city" onChange={onChange} />
         </div>
         <div>
           <label htmlFor="street">Street: </label>
@@ -111,7 +104,7 @@ export const Registration = () => {
             value={newUser.street}
             name="street"
             onChange={onChange}
-          ></input>
+          />
           <label htmlFor="houseNumber">No.: </label>
           <input
             className="input-field-short"
@@ -120,20 +113,8 @@ export const Registration = () => {
             value={newUser.houseNumber}
             name="houseNumber"
             onChange={onChange}
-          ></input>
+          />
         </div>
-        {/* <div> */}
-        {/* <label htmlFor='houseNumber'>House number: </label>
-          <input
-            className='input-field'
-            type='text'
-            id='houseNumber'
-            value={newUser.houseNumber}
-            name='houseNumber'
-            onChange={onChange}
-          ></input> */}
-        {/* </div> */}
-
         <div>
           <label htmlFor="phoneNumber">Phone number: </label>
           <input
@@ -143,7 +124,7 @@ export const Registration = () => {
             value={newUser.phoneNumber}
             name="phoneNumber"
             onChange={onChange}
-          ></input>
+          />
         </div>
         <div>
           <label htmlFor="password">Password: </label>
@@ -154,7 +135,7 @@ export const Registration = () => {
             value={newUser.password}
             name="password"
             onChange={onChange}
-          ></input>
+          />
         </div>
         {/* {Error section} */}
         {error && <p>{error}</p>}

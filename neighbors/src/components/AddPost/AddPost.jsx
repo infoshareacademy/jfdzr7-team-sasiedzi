@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { addDoc, serverTimestamp } from 'firebase/firestore';
 
-import { ThemeContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
+import { UserContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
 export const AddPost = () => {
-  const { user } = useContext(ThemeContext); // Zalogowany user na potrzeby testów
+  const { user } = useContext(UserContext); // Zalogowany user
   const [chooseTypeOfPost, setTypeOfPost] = useState('');
   const [notAvailbeToWritePost, setAvailbeToWritePost] = useState(true);
   const [postData, setPostData] = useState({
@@ -33,10 +33,10 @@ export const AddPost = () => {
   const onClick = (e) => {
     e.preventDefault();
     if (chooseTypeOfPost === 'NeedHelp') {
-      addDoc(needHelpPostsData, postData).then(() => {});
+      addDoc(needHelpPostsData, postData);
     }
     if (chooseTypeOfPost === 'OfferHelp') {
-      addDoc(offerHelpPostsData, postData).then(() => {});
+      addDoc(offerHelpPostsData, postData);
     }
     setPostData({ post: '', postTitle: '' });
   };
@@ -45,7 +45,7 @@ export const AddPost = () => {
       <form>
         <label htmlFor="TypeOfPost">Choose type of post: </label>
         <select name="typOfPost" onChange={onChangleSelectPost}>
-          <option value=" "></option>
+          <option value=" " />
           <option value="NeedHelp">Need help</option>
           <option value="OfferHelp">Offer help</option>
         </select>
@@ -56,7 +56,7 @@ export const AddPost = () => {
           value={postData.postTitle}
           name="postTitle"
           onChange={onChange}
-        ></input>
+        />
         <label htmlFor="post">Add new post: </label>
         <textarea
           name="post"
