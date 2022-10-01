@@ -20,6 +20,7 @@ export const App = () => {
   return (
     <>
       <Navbar />
+      <AddPost />
       <Routes>
         <Route path="/post/:id" element={<PostDetails />} />
       </Routes>
