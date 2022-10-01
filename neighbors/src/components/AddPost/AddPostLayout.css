@@ -100,3 +100,34 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
+@media screen and (max-width: 880px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .post-box {
+    padding-top: 50px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+  .right form {
+    padding: 0 12px;
+  }
+  .addpost_container {
+    padding: 20px;
+  }
+  .bg-gradient {
+    background-size: 200%;
+  }
+}
