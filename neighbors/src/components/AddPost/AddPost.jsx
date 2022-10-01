@@ -46,7 +46,7 @@ export const AddPost = () => {
   };
   return (
     <div className="bg-gradient">
-      <div className="container">
+      <div className="addpost_container">
         <div className="post-box">
           <div className="left">
             <FontAwesomeIcon className="icon" icon={faComments} />

@@ -38,7 +38,7 @@ export const HomePanel = () => {
           {slides.map((slide, index) => {
             return (
               <div className="slider-card" key={index}>
-                <div className="post-box">
+                <div className="homepanel_post-box">
                   <img src={slide.svg} className="box-logo" alt="addPost Logo" />
 
                   <p className="slider-card-title">{slide.title}</p>
