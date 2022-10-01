@@ -16,6 +16,7 @@ function closeNav() {
 export const Navbar = () => {
   const onClickLogOut = () => {
     signOut(auth);
+    window.location.href = '/';
   };
   const { isAuth } = useContext(UserContext);
   return isAuth ? (

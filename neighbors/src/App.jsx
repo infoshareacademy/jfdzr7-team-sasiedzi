@@ -24,6 +24,16 @@ export const App = () => {
         ) : (
           <Route path="/" element={<Container />} />
         )}
+
+        <Route
+          path="*"
+          element={
+            <div className="container t-center ">
+              <h1 className="header-1 p-50">404 - Page not found</h1>
+              <p>This page does not exist or requires to log in.</p>
+            </div>
+          }
+        />
       </Routes>
     </>
   );
