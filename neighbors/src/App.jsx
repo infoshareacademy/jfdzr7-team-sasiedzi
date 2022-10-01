@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 
 import { Navbar } from './components/navbar/Navbar';
 import { Container } from './components/containers/container';
@@ -17,6 +16,7 @@ export const App = () => {
   // }
   return (
     <>
+
       <Navbar />
       <PostList></PostList>
       <AddPost></AddPost>
