@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, serverTimestamp } from 'firebase/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
+
 import '../AddPost/AddPostLayout.css';
-import { ThemeContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
-import { addDoc, serverTimestamp } from 'firebase/firestore';
+
 import { UserContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
 export const AddPost = () => {
   const { user } = useContext(UserContext); // Zalogowany user
