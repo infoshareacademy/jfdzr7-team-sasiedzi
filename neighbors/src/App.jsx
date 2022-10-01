@@ -9,19 +9,21 @@ import { AddPost } from './components/AddPost/AddPost';
 import { PostList } from './components/posts/post-list';
 import { PostDetails } from './components/posts/single-post';
 export const App = () => {
-  const { user } = useContext(UserContext);
-  // if (!user) {
-  //   return (
-  //     <>
-  //       <Container />
-  //     </>
-  //   );
-  // }
+  const { isAuth } = useContext(UserContext);
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/post/:id" element={<PostDetails />} />
+        {isAuth ? (
+          <>
+            <Route path="/" element={<HomePanel />} />
+            <Route path="/help-board" element={<PostList />} />
+            <Route path="/need-help" element={<AddPost />} />
+            <Route path="/post/:id" element={<PostDetails />} />
+          </>
+        ) : (
+          <Route path="/" element={<Container />} />
+        )}
       </Routes>
     </>
   );
