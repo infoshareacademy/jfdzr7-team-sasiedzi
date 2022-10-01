@@ -35,9 +35,6 @@ export const PostList = () => {
       <div className="bg-gradient pt-30 pb-30">
         <div className="container">
           <Post />
-          <Post />
-          <Post />
-          <Post />
         </div>
       </div>
     </main>
