@@ -1,6 +1,4 @@
-import { collection, onSnapshot, doc, getDocs, query, orderBy } from 'firebase/firestore';
 import { collection } from 'firebase/firestore';
-
 import { useEffect, useState, createContext } from 'react';
 import { PropTypes } from 'prop-types';
 import { onAuthStateChanged } from '@firebase/auth';
