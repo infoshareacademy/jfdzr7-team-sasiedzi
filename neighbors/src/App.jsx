@@ -1,6 +1,8 @@
 
 import { Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/navbar/Navbar';
+import { HomePanel } from './components/homePanel/HomePanel';
+
 import { Container } from './components/containers/container';
 import { UserContext } from './helpers/apiCommunication';
 import { AddPost } from './components/AddPost/AddPost';
@@ -19,6 +21,7 @@ export const App = () => {
   // }
   return (
     <>
+
    <Navbar />
       <Routes>
         <Route path="/post/:id" element={<PostDetails />} />
