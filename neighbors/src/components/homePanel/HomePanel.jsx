@@ -1,8 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faComments } from '@fortawesome/free-solid-svg-icons';
 import './stylesHomePanel.css';
-import { NavLink } from 'react-router-dom';
-
 import addPost from './img/addPost.svg';
 import help from './img/help.svg';
 import posts from './img/posts.svg';
@@ -12,7 +10,6 @@ import profile from './img/profile.svg';
 export const HomePanel = () => {
   const slides = [
     {
-      link: `/help`,
       svg: posts,
       title: 'Ogłoszenia',
       description: 'This is a description',
@@ -37,10 +34,6 @@ export const HomePanel = () => {
   return (
     <div className="home-container">
       <div id="body">
-        {/* <div className='container'>
-        <div className='bg-gradient'></div>
-      </div> */}
-
         <div id="slider">
           {slides.map((slide, index) => {
             return (
