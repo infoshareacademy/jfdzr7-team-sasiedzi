@@ -1,7 +1,9 @@
 import { Link, NavLink } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import { useContext } from 'react';
 
 import { auth } from '../../api/firebase';
+import { UserContext } from '../../helpers/apiCommunication';
 
 function openNav() {
   document.getElementById('mobileNav').style.height = '100%';
@@ -14,8 +16,10 @@ function closeNav() {
 export const Navbar = () => {
   const onClickLogOut = () => {
     signOut(auth);
+    window.location.href = '/';
   };
-  return (
+  const { isAuth } = useContext(UserContext);
+  return isAuth ? (
     <>
       <nav className="navbar">
         <NavLink className="navbar-link" to={`/help-board`}>
@@ -33,10 +37,10 @@ export const Navbar = () => {
           Profile
         </Link>
 
-        <button className="btn btn-2" onClick={onClickLogOut}>
+        <button className="btn btn-2 ml-10" onClick={onClickLogOut}>
           Log out
         </button>
-        <button onClick={openNav} className="btn nav-hamburger">
+        <button onClick={openNav} className="btn nav-hamburger ml-10">
           <div></div>
           <div></div>
           <div></div>
@@ -65,6 +69,35 @@ export const Navbar = () => {
           <button className="btn btn-2" onClick={onClickLogOut}>
             Log out
           </button>
+        </div>
+      </nav>
+    </>
+  ) : (
+    <>
+      <nav className="navbar">
+        <NavLink className="btn" to={`/`}>
+          Login
+        </NavLink>
+        <NavLink className="btn btn-2 ml-10" to={`/`}>
+          Register
+        </NavLink>
+        <button onClick={openNav} className="btn nav-hamburger ml-10">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </nav>
+      <nav className="nav-mobile" id="mobileNav">
+        <a href="#" className="closeBtn" onClick={closeNav}>
+          &times;
+        </a>
+        <div className="nav-mobile-content">
+          <NavLink className="btn" to={`/`}>
+            Login
+          </NavLink>
+          <NavLink className="btn btn-2 ml-10" to={`/`}>
+            Register
+          </NavLink>
         </div>
       </nav>
     </>
