@@ -1,30 +1,34 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faComments } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
 import './stylesHomePanel.css';
+import '../../style/helpers.css';
 import addPost from './img/addPost.svg';
 import help from './img/help.svg';
 import posts from './img/posts.svg';
 import profile from './img/profile.svg';
-// import { ThemeContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
 
 export const HomePanel = () => {
   const slides = [
     {
+      link: '/help-board',
       svg: posts,
-      title: 'Ogłoszenia',
+      title: 'Posts',
       description: 'This is a description',
     },
     {
+      link: '/need-help',
       svg: addPost,
-      title: 'Dodaj ogłoszenie',
+      title: 'Add post',
       description: 'This is a second description',
     },
     {
+      link: '/profil',
       svg: profile,
-      title: 'Profil',
+      title: 'Profile',
       description: 'This is a third description',
     },
     {
+      link: '/help-board',
       svg: help,
       title: 'Help',
       description: 'This is a fourth description',
@@ -32,19 +36,20 @@ export const HomePanel = () => {
   ];
 
   return (
-    <div className="home-container">
+    <div className="bg-gradient">
       <div id="body">
         <div id="slider">
           {slides.map((slide, index) => {
             return (
-              <div className="slider-card" key={index}>
-                <div className="homepanel_post-box">
-                  <img src={slide.svg} className="box-logo" alt="addPost Logo" />
-
-                  <p className="slider-card-title">{slide.title}</p>
-                  <p className="slider-card-description">{slide.description}</p>
+              <Link key={slide.title} to={slide.link}>
+                <div className="slider-card" key={index}>
+                  <div className="homepanel_post-box">
+                    <img src={slide.svg} className="box-logo" alt="addPost Logo" />
+                    <p className="slider-card-title">{slide.title}</p>
+                    <p className="slider-card-description">{slide.description}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
