@@ -1,15 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { addDoc, serverTimestamp } from 'firebase/firestore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 
 import '../AddPost/AddPostLayout.css';
 
-import { UserContext, needHelpPostsData, offerHelpPostsData } from '../../helpers/apiCommunication';
+import { UserContext, needHelpPostsData } from '../../helpers/apiCommunication';
 export const AddPost = () => {
   const { user } = useContext(UserContext); // Zalogowany user
-  const [chooseTypeOfPost, setTypeOfPost] = useState('');
-  const [notAvailbeToWritePost, setAvailbeToWritePost] = useState(true);
   const [postData, setPostData] = useState({
     post: '',
     postTitle: '',
@@ -23,25 +21,10 @@ export const AddPost = () => {
       [name]: value,
     });
   };
-  const onChangleSelectPost = (e) => {
-    setTypeOfPost(e.target.value);
-  };
-  useEffect(() => {
-    if (chooseTypeOfPost === 'NeedHelp' || chooseTypeOfPost === 'OfferHelp') {
-      setAvailbeToWritePost(false);
-    } else {
-      setAvailbeToWritePost(true);
-    }
-  }, [chooseTypeOfPost]);
 
   const onClick = (e) => {
     e.preventDefault();
-    if (chooseTypeOfPost === 'NeedHelp') {
-      addDoc(needHelpPostsData, postData);
-    }
-    if (chooseTypeOfPost === 'OfferHelp') {
-      addDoc(offerHelpPostsData, postData);
-    }
+    addDoc(needHelpPostsData, postData);
     setPostData({ post: '', postTitle: '' });
   };
   return (
@@ -53,17 +36,9 @@ export const AddPost = () => {
           </div>
           <div className="right">
             <form>
-              <label htmlFor="TypeOfPost">Choose type of post: </label>
-              <select name="typOfPost" onChange={onChangleSelectPost} className="field">
-                <option value=" "></option>
-                <option value="NeedHelp">Need help</option>
-                <option value="OfferHelp">Offer help</option>
-              </select>
-
               <label htmlFor="postTitle">Add title: </label>
               <input
                 type="text"
-                disabled={notAvailbeToWritePost}
                 value={postData.postTitle}
                 name="postTitle"
                 onChange={onChange}
@@ -75,14 +50,13 @@ export const AddPost = () => {
               <textarea
                 name="post"
                 value={postData.post}
-                disabled={notAvailbeToWritePost}
                 placeholder="Share your needs or help."
                 className="field"
                 onChange={onChange}
               ></textarea>
             </form>
 
-            <button disabled={notAvailbeToWritePost} type="submit" onClick={onClick} className="btn">
+            <button type="submit" onClick={onClick} className="btn">
               ADD POST
             </button>
           </div>
