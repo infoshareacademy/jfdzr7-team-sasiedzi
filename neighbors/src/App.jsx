@@ -8,6 +8,7 @@ import { UserContext } from './helpers/apiCommunication';
 import { AddPost } from './components/AddPost/AddPost';
 import { PostList } from './components/posts/post-list';
 import { PostDetails } from './components/posts/single-post';
+import { Footer } from './components/footer/footer';
 export const App = () => {
   const { user } = useContext(UserContext);
   // if (!user) {
@@ -24,6 +25,7 @@ export const App = () => {
       <Routes>
         <Route path="/post/:id" element={<PostDetails />} />
       </Routes>
+      <Footer />
     </>
   );
 };
