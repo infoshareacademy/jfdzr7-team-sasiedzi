@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './stylesHomePanel.css';
 import '../../style/helpers.css';
+import '../../style/style.css';
 import addPost from './img/addPost.svg';
 import help from './img/help.svg';
 import posts from './img/posts.svg';
@@ -37,15 +38,15 @@ export const HomePanel = () => {
 
   return (
     <div className="bg-gradient">
-      <div id="body">
-        <div id="slider">
+      <div className="body">
+        <div className="slider">
           {slides.map((slide, index) => {
             return (
               <Link key={slide.title} to={slide.link}>
                 <div className="slider-card" key={index}>
                   <div className="homepanel_post-box">
                     <img src={slide.svg} className="box-logo" alt="addPost Logo" />
-                    <p className="slider-card-title">{slide.title}</p>
+                    <button className="btn">{slide.title}</button>
                     <p className="slider-card-description">{slide.description}</p>
                   </div>
                 </div>

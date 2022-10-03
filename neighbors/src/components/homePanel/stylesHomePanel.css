@@ -1,4 +1,4 @@
-#body {
+.body {
   width: 100%;
   height: 100%;
 }
@@ -9,7 +9,7 @@
   height: 150px;
 }
 
-#slider {
+.slider {
   white-space: nowrap;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -17,34 +17,25 @@
   height: 100vh;
   width: 100%;
   display: flex;
- gap: 20px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   padding: 20px 120px; 
    z-index: 7;
 }
 
-.slider-card-title,
-.slider-card-description {
-  margin: 5px 5px 5px 5px;
-}
-
-.slider-card-title {
-  font-weight: 500;
-}
-
 .slider-card-description {
   opacity: 0.5;
   font-size: 13px;
   margin-bottom: 10px;
+  padding: 5px;
+  margin: 15px 5px 15px 5px;
 }
 
 .slider-card {
- 
   margin-left: 5px;
   margin-right: 5px;
   min-width: 320px;
-
   cursor: pointer;
 }
 
@@ -75,17 +66,32 @@
     height: 200px;
   }
 }
+@media screen and (max-width: 1024px) {
+  .homepanel_post-box {
+    max-width: 200px;
+  }
+  .slider-card {
+    margin-left: 5px;
+    margin-right: 5px;
+    min-width: 220px;
+    cursor: pointer;
+}
+}
 @media screen and (max-width: 1280px) {
   .homepanel_post-box {
-    max-width: 240px;
- 
+    max-width: 200px;
+  }
+  .slider-card {
+    margin-left: 5px;
+    margin-right: 5px;
+    min-width: 220px;
+    cursor: pointer;
   }
 }
 
 @media screen and (max-width: 1380px) {
   .homepanel_post-box {
-    max-width: 280px;
- 
+    max-width: 240px;
   }
 }
 
