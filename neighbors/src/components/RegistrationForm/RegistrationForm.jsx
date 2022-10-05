@@ -1,7 +1,7 @@
 import '../mainLayout.css';
 
 import { useState } from 'react';
-import { addDoc, setDoc, doc } from 'firebase/firestore';
+import { setDoc, doc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 
 import { firebaseErrors } from '../../api/firebase';
