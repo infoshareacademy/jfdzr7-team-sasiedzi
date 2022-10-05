@@ -23,7 +23,7 @@ export const App = () => {
             <Route path="/need-help" element={<AddPost />} />
             <Route path="/post/:id" element={<PostDetails />} />
 
-            <Route path="/about" element={<About />} />
+            <Route path="/how" element={<About />} />
           </>
         ) : (
           <Route path="/" element={<Container />} />
