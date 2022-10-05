@@ -24,8 +24,8 @@ export const App = () => {
       <AddPost></AddPost> */}
 
       <Navbar />
-      <UserProfile></UserProfile>
-      {/* <PostList></PostList> */}
+      {/* <UserProfile></UserProfile> */}
+      <PostList></PostList>
       <Routes>
         <Route path="/post/:id" element={<PostDetails />} />
       </Routes>
