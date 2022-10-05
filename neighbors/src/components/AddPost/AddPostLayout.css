@@ -81,12 +81,6 @@ textarea {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1400px) {
-  .bg-gradient {
-    background-size: 200%;
-  }
-}
-
 @media screen and (max-width: 900px) {
   .left {
     margin: 0;
