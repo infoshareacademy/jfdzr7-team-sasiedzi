@@ -19,7 +19,7 @@ export const Footer = () => {
           <section className="footer-info__terms">
             Terms and Conditions
             <br />
-            <p>Copyright &copy; 2022</p>
+            <p className="copy-right">Copyright &copy; 2022</p>
           </section>
         </section>
         <section className="footer-info-right">
