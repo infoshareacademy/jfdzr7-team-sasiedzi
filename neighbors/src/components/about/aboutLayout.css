@@ -1,11 +1,12 @@
-.container {
+.containerAbout {
   position: relative;
   height: 100vh;
   width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
+  margin: auto;
 }
 
 h1 {
@@ -20,11 +21,6 @@ p {
 .left {
   width: 100%;
   margin: 0 15px;
-}
-
-.icon {
-  font-size: 10em;
-  color: #acacac;
 }
 
 @media screen and (max-width: 1400px) {
@@ -53,10 +49,6 @@ p {
 }
 
 @media screen and (max-width: 390px) {
-  .icon {
-    width: 100px;
-    height: 100px;
-  }
   p {
     padding: 5px 5px;
   }

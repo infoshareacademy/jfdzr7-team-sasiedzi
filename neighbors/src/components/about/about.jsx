@@ -5,7 +5,7 @@ import '../about/aboutLayout.css';
 export const About = () => {
   return (
     <div className="bg-gradient">
-      <div className="container">
+      <div className="containerAbout">
         <div className="post-box">
           <div className="left">
             <FontAwesomeIcon icon={faCircleInfo} className="icon" />
