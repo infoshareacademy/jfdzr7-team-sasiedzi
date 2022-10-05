@@ -8,6 +8,11 @@
   position: sticky;
 }
 
+.copy-right {
+  text-align: center;
+  font-size: 10px;
+}
+
 .footer-social-media {
   display: flex;
   flex-direction: row;
