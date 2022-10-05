@@ -8,12 +8,14 @@ import { UserContext } from './helpers/apiCommunication';
 import { AddPost } from './components/AddPost/AddPost';
 import { PostList } from './components/posts/post-list';
 import { PostDetails } from './components/posts/single-post';
+import { UserProfile } from './components/UserProfile/UserProfile';
 export const App = () => {
   const { isAuth } = useContext(UserContext);
   return (
     <>
       <Navbar />
-      <Routes>
+      <UserProfile></UserProfile>
+      {/* <Routes>
         {isAuth ? (
           <>
             <Route path="/" element={<HomePanel />} />
@@ -34,7 +36,7 @@ export const App = () => {
             </div>
           }
         />
-      </Routes>
+      </Routes> */}
     </>
   );
 };
