@@ -46,7 +46,7 @@ export const HomePanel = () => {
                 <div className="slider-card" key={index}>
                   <div className="homepanel_post-box">
                     <img src={slide.svg} className="box-logo" alt="addPost Logo" />
-                    <button className="btn">{slide.title}</button>
+                    <p className="slider-card-title">{slide.title}</p>
                     <p className="slider-card-description">{slide.description}</p>
                   </div>
                 </div>

@@ -24,20 +24,29 @@
    z-index: 7;
 }
 
+.slider-card-title,
+.slider-card-description {
+  margin: 5px 5px 5px 5px;
+}
+
+.slider-card-title {
+  font-weight: 500;
+}
+
 .slider-card-description {
   opacity: 0.5;
   font-size: 13px;
   margin-bottom: 10px;
   padding: 5px;
-  margin: 15px 5px 15px 5px;
 }
 
 .slider-card {
   margin-left: 5px;
   margin-right: 5px;
   min-width: 320px;
-  cursor: pointer;
+  cursor: pointer; 
 }
+
 
 .homepanel_post-box {
   max-width: 320px;
@@ -49,49 +58,72 @@
   background-color: #fff;
   box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
   border-radius: 15px;
+  transition: 0.7s;
+}
+.homepanel_post-box:hover,
+.homepanel_post-box:focus {
+  color: var(--color-green);
+  max-width: 330px;
+  border: 8px solid rgba(0, 0, 0, 0);
 }
 
-@media screen and (max-width: 880px) {
-  #slider {
+/* 1440  900   880    390 */
+@media screen and (max-width: 1440px) {
+  .homepanel_post-box {
+    max-width: 300px;
+  }
+    .slider-card {
+    margin-left: 5px;
+    margin-right: 5px;
+    min-width: 200px;
+    cursor: pointer;
+}
+}
+
+@media screen and (max-width: 900px) {
+  .homepanel_post-box {
+    max-width: 280px;
+  }
+  .homepanel_post-box:hover,
+.homepanel_post-box:focus {
+  color: var(--color-green);
+  max-width: 330px;
+  border: 8px solid rgba(146, 0, 0, 0);
+}
+  .slider {
     display: flex;
     flex-wrap: wrap;
     padding-top: 5px;
-    height: 100%;
   }
   .slider-card {
     margin-top: 5px;
-    min-width: 200px;
-  }
-  .left {
-    height: 200px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .homepanel_post-box {
-    max-width: 200px;
-  }
-  .slider-card {
-    margin-left: 5px;
-    margin-right: 5px;
     min-width: 220px;
-    cursor: pointer;
-}
-}
-@media screen and (max-width: 1280px) {
-  .homepanel_post-box {
-    max-width: 200px;
-  }
-  .slider-card {
-    margin-left: 5px;
-    margin-right: 5px;
-    min-width: 220px;
-    cursor: pointer;
   }
 }
 
-@media screen and (max-width: 1380px) {
-  .homepanel_post-box {
-    max-width: 240px;
+@media screen and (max-width: 880px) {
+  .slider-card {
+    min-width: 200px;
   }
 }
+
+@media screen and (max-width: 390px) {
+  .homepanel_post-box {
+    max-width: 200px;
+  }
+  .slider {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1px;
+  }
+  .slider-card {
+    margin-top: 5px;
+    max-height: 220px;
+  }
+}
+
+
+
+
+
 
