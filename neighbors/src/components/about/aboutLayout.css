@@ -1,12 +1,12 @@
-.container {
+.containerAbout {
   position: relative;
   height: 100vh;
   width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px;
-  justify-content: center;
+  padding: 10px;
+  margin: auto;
 }
 
 h1 {
@@ -23,11 +23,6 @@ p {
   margin: 0 15px;
 }
 
-.icon {
-  font-size: 10em;
-  color: #acacac;
-}
-
 @media screen and (max-width: 1400px) {
   .bg-gradient {
     background-size: 200%;
@@ -36,15 +31,11 @@ p {
 
 @media screen and (max-width: 900px) {
   .left {
-    width: 100%;
     margin: 0;
   }
   .post-box {
     padding-top: 50px;
     grid-template-columns: 1fr;
-  }
-  p {
-    text-align: left;
   }
 }
 
@@ -53,32 +44,12 @@ p {
     grid-template-columns: 1fr;
   }
   .left {
-    width: 100%;
     height: 100%;
-    margin: 0;
-  }
-  .post-box {
-    padding-top: 50px;
-    grid-template-columns: 1fr;
-  }
-  p {
-    text-align: left;
   }
 }
 
 @media screen and (max-width: 390px) {
-  .icon {
-    width: 100px;
-    height: 100px;
-  }
-  .container {
-    padding: 20px;
-  }
-  .bg-gradient {
-    background-size: 200%;
-  }
   p {
-    text-align: left;
     padding: 5px 5px;
   }
 }

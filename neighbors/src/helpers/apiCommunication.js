@@ -33,7 +33,7 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <>
-      <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+      <UserContext.Provider value={{ user, isAuth }}>{children}</UserContext.Provider>
     </>
   );
 };
