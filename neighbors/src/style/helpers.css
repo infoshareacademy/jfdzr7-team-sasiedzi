@@ -441,8 +441,13 @@
   font-weight: bold;
 }
 
+.fw-bold {font-weight: bold;}
+
+.t-center {text-align: center;}
+
 @media screen and (max-width: 1400px) {
   .bg-gradient {
     background-size: 200%;
   }
 }
+
