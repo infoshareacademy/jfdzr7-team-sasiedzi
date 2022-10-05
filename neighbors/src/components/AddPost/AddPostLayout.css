@@ -81,20 +81,14 @@ textarea {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1400px) {
-  .bg-gradient {
-    background-size: 200%;
-  }
-}
-
 @media screen and (max-width: 900px) {
+  .left {
+    margin: 0;
+  }
   .contact-box {
     grid-template-columns: 1fr;
   }
-  .left {
-    width: 100%;
-    margin: 0;
-  }
+
   .post-box {
     padding-top: 50px;
     grid-template-columns: 1fr;
@@ -102,21 +96,12 @@ textarea {
 }
 
 @media screen and (max-width: 880px) {
-  .contact-box {
-    grid-template-columns: 1fr;
-  }
   .left {
-    width: 100%;
     height: 100%;
-    margin: 0;
-  }
-  .post-box {
-    padding-top: 50px;
-    grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 391px) {
   .icon {
     width: 100px;
     height: 100px;
@@ -126,8 +111,5 @@ textarea {
   }
   .addpost_container {
     padding: 20px;
-  }
-  .bg-gradient {
-    background-size: 200%;
   }
 }
