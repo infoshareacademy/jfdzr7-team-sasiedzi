@@ -1,6 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { useContext } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 import { auth } from '../../api/firebase';
 import { UserContext } from '../../helpers/apiCommunication';
@@ -36,10 +38,12 @@ export const Navbar = () => {
         <Link className="btn" to={`/profile`}>
           Profile
         </Link>
-
         <button className="btn btn-2 ml-10" onClick={onClickLogOut}>
           Log out
         </button>
+        <NavLink className="navbar-icon" to={`/`}>
+          <FontAwesomeIcon className="navbar-icon" icon={faHouse} />
+        </NavLink>
         <button onClick={openNav} className="btn nav-hamburger ml-10">
           <div></div>
           <div></div>
@@ -65,10 +69,12 @@ export const Navbar = () => {
           <Link className="btn" to={`/profile`}>
             Profile
           </Link>
-
           <button className="btn btn-2" onClick={onClickLogOut}>
             Log out
           </button>
+          <NavLink className="navbar-icon" to={`/`}>
+            <FontAwesomeIcon className="navbar-icon" icon={faHouse} />
+          </NavLink>
         </div>
       </nav>
     </>

@@ -125,6 +125,21 @@ p {
   border-bottom: 2px solid var(--color-secondary);
   text-decoration: none;
 }
+.navbar-icon {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  font-size: 1.1em;
+}
+.navbar-icon:hover,
+.navbar-icon:focus,
+.navbar-icon:active
+ {
+  font-size: 1.3em;
+  color: var(--color-green);
+  top: 12px;
+  left: 17px;
+}
 
 .navbar-link:hover,
 .navbar-link:focus,
@@ -178,6 +193,7 @@ p {
 .nav-mobile-content a {
   margin: 10px;
 }
+
 
 @media only screen and (max-width: 768px) {
   .navbar a {
