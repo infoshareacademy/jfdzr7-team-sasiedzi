@@ -1,22 +1,60 @@
-import { documentId } from '@firebase/firestore';
+import { documentId, updateDoc } from '@firebase/firestore';
 import { useEffect, useState } from 'react';
-import { onSnapshot, where, query } from '@firebase/firestore';
+import { onSnapshot, where, query, doc } from '@firebase/firestore';
 
+import { db } from '../../api/firebase';
 import { usersData } from '../../helpers/apiCommunication';
 import { auth } from '../../api/firebase';
 export const UserProfile = () => {
+  const clearForm = {
+    firstName: '',
+    lastName: '',
+    city: '',
+    street: '',
+    phoneNumber: '',
+    houseNumber: '',
+  };
   const [profileData, setProfileData] = useState(null);
   const [edit, setEdit] = useState(false);
+  const [newUserData, setNewUserData] = useState(clearForm);
   const onClickEdit = () => {
     setEdit(true);
   };
   const onClickCancel = () => {
+    setNewUserData(clearForm);
     setEdit(false);
   };
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setNewUserData({
+      ...newUserData,
+      [name]: value,
+    });
+    console.log(newUserData);
+  };
+
   const onClickSubmit = () => {
+    onSnapshot(query(usersData, where(documentId(), '==', `${auth.currentUser.uid}`)), (querySnapshot) => {
+      querySnapshot.docs.map((element) => {
+        setProfileData({ id: element.id, ...element.data() });
+      });
+    });
+
+    const userDataCollection = doc(db, 'Users', `${auth.currentUser.uid}`);
+    updateDoc(userDataCollection, {
+      firstName: newUserData.firstName ? newUserData.firstName : profileData.firstName,
+      lastName: newUserData.lastName ? newUserData.lastName : profileData.lastName,
+      city: newUserData.city ? newUserData.city : profileData.city,
+      street: newUserData.street ? newUserData.street : profileData.street,
+      phoneNumber: newUserData.phoneNumber ? newUserData.phoneNumber : profileData.phoneNumber,
+      houseNumber: newUserData.houseNumber ? newUserData.houseNumber : profileData.houseNumber,
+    });
+
+    setNewUserData(clearForm);
     setEdit(false);
   };
-  const onChange = () => {};
+
+  // Displaying profile data
   useEffect(() => {
     onSnapshot(query(usersData, where(documentId(), '==', `${auth.currentUser.uid}`)), (querySnapshot) => {
       querySnapshot.docs.map((element) => {
@@ -37,6 +75,7 @@ export const UserProfile = () => {
                   <input
                     className="input-field"
                     placeholder={profileData.firstName}
+                    value={newUserData.firstName}
                     type="text"
                     id="firstName"
                     name="firstName"
@@ -49,6 +88,7 @@ export const UserProfile = () => {
                     className="input-field"
                     type="text"
                     placeholder={profileData.lastName}
+                    value={newUserData.lastName}
                     id="lastName"
                     name="lastName"
                     onChange={onChange}
@@ -61,6 +101,7 @@ export const UserProfile = () => {
                     type="text"
                     id="city"
                     placeholder={profileData.city}
+                    value={newUserData.city}
                     name="city"
                     onChange={onChange}
                   />
@@ -70,6 +111,7 @@ export const UserProfile = () => {
                   <input
                     className="input-field"
                     placeholder={profileData.street}
+                    value={newUserData.street}
                     type="text"
                     id="street"
                     name="street"
@@ -79,6 +121,7 @@ export const UserProfile = () => {
                   <input
                     className="input-field-short"
                     placeholder={profileData.houseNumber ? profileData.houseNumber : 'x'}
+                    value={newUserData.houseNumber}
                     type="text"
                     id="houseNumber"
                     name="houseNumber"
@@ -90,20 +133,26 @@ export const UserProfile = () => {
                   <input
                     className="input-field"
                     type="text"
+                    value={newUserData.phoneNumber}
                     placeholder={profileData.phoneNumber}
                     id="phoneNumber"
                     name="phoneNumber"
                     onChange={onChange}
                   />
                 </div>
-                <button onClick={onClickSubmit}>Submit changes </button>
-                <button onClick={onClickCancel}>Cancel edit </button>
+                <button className="btn" type="submit" onClick={onClickSubmit}>
+                  Submit changes{' '}
+                </button>
+                <button className="btn" onClick={onClickCancel}>
+                  Cancel edit{' '}
+                </button>
               </form>
             </>
           ) : (
             <>
-              {' '}
-              <button onClick={onClickEdit}> Edit your data</button>
+              <button className="btn" onClick={onClickEdit}>
+                Edit your data
+              </button>
               <p>First name: {profileData.firstName}</p>
               <p>Last name: {profileData.lastName}</p>
               <p>Contact: {profileData.phoneNumber}</p>

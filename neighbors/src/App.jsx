@@ -15,6 +15,7 @@ export const App = () => {
   return (
     <>
       <Navbar />
+      {/* <Container></Container> */}
       <UserProfile></UserProfile>
       {/* <Routes>
         {isAuth ? (
