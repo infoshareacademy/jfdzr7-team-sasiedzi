@@ -76,7 +76,7 @@ export const Navbar = () => {
           </button>
         </div>
         <NavLink className="navbar-icon" to={`/`}>
-          <FontAwesomeIcon className="navbar-icon" icon={faHouse} />
+          <FontAwesomeIcon className="navbar-icon" icon={faHouse} onClick={closeNav} />
         </NavLink>
       </nav>
     </>
