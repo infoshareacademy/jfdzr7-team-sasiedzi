@@ -5,6 +5,8 @@ import { onSnapshot, where, query, doc } from '@firebase/firestore';
 import { db } from '../../api/firebase';
 import { usersData } from '../../helpers/apiCommunication';
 import { auth } from '../../api/firebase';
+
+import { UsersPosts } from './UsersPosts';
 export const UserProfile = () => {
   const clearForm = {
     firstName: '',
@@ -30,7 +32,6 @@ export const UserProfile = () => {
       ...newUserData,
       [name]: value,
     });
-    console.log(newUserData);
   };
 
   const onClickSubmit = () => {
@@ -165,6 +166,7 @@ export const UserProfile = () => {
       ) : (
         <>Loading Data</>
       )}
+      <UsersPosts />
     </>
   );
 };
