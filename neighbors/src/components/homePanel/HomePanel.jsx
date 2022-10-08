@@ -25,7 +25,7 @@ export const HomePanel = () => {
       description: 'This is a second description',
     },
     {
-      link: '/profil',
+      link: '/profile',
       svg: profile,
       title: 'Profile',
       description: 'This is a third description',
