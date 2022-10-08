@@ -3,7 +3,7 @@ import { onSnapshot, query, limit, where } from 'firebase/firestore';
 import { PropTypes } from 'prop-types';
 
 import { showStartPost } from '../../helpers/searchForPostsHelpers';
-import { offerHelpPostsData, usersData } from '../../helpers/apiCommunication';
+import { needHelpPostsData, usersData } from '../../helpers/apiCommunication';
 export const Post = ({ searchFor, startSearch, setStartSearch }) => {
   const [userArray, setUserArray] = useState(null);
   const [offerHelpPosts, setOffetHelpPosts] = useState(null);
@@ -12,7 +12,7 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
   useEffect(() => {
     let idArray = [];
     if (searchFor.city === '') {
-      showStartPost(offerHelpPostsData, setOffetHelpPosts, usersData, idArray, setUserArray);
+      showStartPost(needHelpPostsData, setOffetHelpPosts, usersData, idArray, setUserArray);
     } else {
       let colection = {};
       if (!searchFor.street) {
@@ -29,7 +29,7 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
           });
           const citySearchedPosts = [];
           Object.keys(colection).length === 0 ? setThereISNoPost(true) : setThereISNoPost(false);
-          onSnapshot(query(offerHelpPostsData, where('userID', 'in', idArray)), limit(10), (querySnapshot) => {
+          onSnapshot(query(needHelpPostsData, where('userID', 'in', idArray)), limit(10), (querySnapshot) => {
             querySnapshot.docs.map((element, index) => {
               citySearchedPosts[index] = { id: element.id, ...element.data() };
             });
@@ -56,13 +56,12 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
             idArray[index] = element[0];
           });
           const citySearchedPosts = [];
-          onSnapshot(query(offerHelpPostsData, where('userID', 'in', idArray)), limit(10), (querySnapshot) => {
+          onSnapshot(query(needHelpPostsData, where('userID', 'in', idArray)), limit(10), (querySnapshot) => {
             querySnapshot.docs.map((element, index) => {
               citySearchedPosts[index] = { id: element.id, ...element.data() };
             });
             setOffetHelpPosts(citySearchedPosts);
             setUserArray(filtredByStreet);
-            console.log('jestem w szukaniu po ulicy', userArray);
           });
         });
       }

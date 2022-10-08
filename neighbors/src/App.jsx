@@ -20,15 +20,15 @@ export const App = () => {
   // }
   return (
     <>
-      {/* <Container></Container>
-      <AddPost></AddPost> */}
+      {/* <Container></Container> */}
+      {/* <AddPost></AddPost> */}
 
       <Navbar />
       {/* <UserProfile></UserProfile> */}
       <PostList></PostList>
-      <Routes>
+      {/* <Routes>
         <Route path="/post/:id" element={<PostDetails />} />
-      </Routes>
+      </Routes> */}
     </>
   );
 };
