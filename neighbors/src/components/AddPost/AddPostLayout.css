@@ -16,7 +16,6 @@
 
 .icon {
   font-size: 10em;
-  margin: 125px;
   color: #acacac;
 }
 
@@ -36,7 +35,7 @@
 .post-box {
   max-width: 850px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -46,9 +45,12 @@
 }
 
 .right {
-  padding: 25px 40px;
+  padding: 25px 5px;
 }
-
+.left {
+  width: 100%;
+  margin: 0 50px;
+}
 .field {
   width: 100%;
   border: 2px solid rgba(0, 0, 0, 0);
@@ -72,17 +74,42 @@
 
 textarea {
   min-height: 150px;
+  resize: none;
 }
 
 .btn {
   cursor: pointer;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 900px) {
+  .left {
+    margin: 0;
+  }
   .contact-box {
     grid-template-columns: 1fr;
   }
+
+  .post-box {
+    padding-top: 50px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 880px) {
   .left {
-    height: 200px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+  .right form {
+    padding: 0 12px;
+  }
+  .addpost_container {
+    padding: 20px;
   }
 }

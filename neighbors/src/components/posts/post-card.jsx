@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { onSnapshot, query, limit, where } from 'firebase/firestore';
+
+import { onSnapshot, query, orderBy, limit, where, documentId } from 'firebase/firestore';
 import { PropTypes } from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import { showStartPost } from '../../helpers/searchForPostsHelpers';
 import { needHelpPostsData, usersData } from '../../helpers/apiCommunication';
+
+
 export const Post = ({ searchFor, startSearch, setStartSearch }) => {
   const [userArray, setUserArray] = useState(null);
   const [offerHelpPosts, setOffetHelpPosts] = useState(null);
@@ -87,6 +91,7 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
             ))}{' '}
           </>
         )
+
       ) : (
         <>Loading posts</>
       )}
