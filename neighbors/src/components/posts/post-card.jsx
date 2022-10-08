@@ -83,7 +83,7 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
                 <div key={element.id} className="card p-20 mb-10">
                   <p className="mb-10">
                     {/* {console.log(userArray, 'userArray', element.userID, ':iserID')} */}
-                    {userArray[element.userID].city ? userArray[element.userID].city : ''}
+                    {userArray[element.userID].city ? userArray[element.userID].city : ''}, {''}
                     {userArray[element.userID].street ? userArray[element.userID].street : ''}
                   </p>
                   <h2 className="header-2 mb-15">{element.postTitle}</h2>
