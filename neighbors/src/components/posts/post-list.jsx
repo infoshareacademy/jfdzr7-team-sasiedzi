@@ -38,7 +38,7 @@ export const PostList = () => {
   }, [searchFor.city]);
   return (
     <main>
-      <div className="container">
+      <div className="container shadow">
         <div className="pt-15 pb-15 bg-white">
           <h1 className="header-1 mb-15">Search for helping hands</h1>
           <div className="row posts-search-row">

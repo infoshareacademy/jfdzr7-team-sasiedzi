@@ -83,7 +83,6 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
               .map((element) => (
                 <div key={element.id} className="card p-20 mb-10">
                   <p className="mb-10">
-                    {/* {console.log(userArray, 'userArray', element.userID, ':iserID')} */}
                     {userArray[element.userID].city ? userArray[element.userID].city : ''}, {''}
                     {userArray[element.userID].street ? userArray[element.userID].street : ''}
                   </p>
