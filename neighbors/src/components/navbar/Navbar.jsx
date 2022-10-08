@@ -55,18 +55,18 @@ export const Navbar = () => {
           &times;
         </a>
         <div className="nav-mobile-content">
-          <NavLink className="navbar-link" to={`/help-board`}>
+          <NavLink className="navbar-link" to={`/help-board`} onClick={closeNav}>
             I want to help
           </NavLink>
 
-          <NavLink className="navbar-link" to={`/need-help`}>
+          <NavLink className="navbar-link" to={`/need-help`} onClick={closeNav}>
             I need help
           </NavLink>
-          <NavLink className="navbar-link" to={`/how`}>
+          <NavLink className="navbar-link" to={`/how`} onClick={closeNav}>
             How it works
           </NavLink>
 
-          <Link className="btn" to={`/profile`}>
+          <Link className="btn" to={`/profile`} onClick={closeNav}>
             Profile
           </Link>
           <button className="btn btn-2" onClick={onClickLogOut}>
@@ -98,10 +98,10 @@ export const Navbar = () => {
           &times;
         </a>
         <div className="nav-mobile-content">
-          <NavLink className="btn" to={`/`}>
+          <NavLink className="btn" to={`/`} onClick={closeNav}>
             Login
           </NavLink>
-          <NavLink className="btn btn-2 ml-10" to={`/`}>
+          <NavLink className="btn btn-2 ml-10" to={`/`} onClick={closeNav}>
             Register
           </NavLink>
         </div>
