@@ -84,7 +84,9 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
                 </p>
                 <h2 className="header-2 mb-15">{element.postTitle}</h2>
                 <p className="no-wrap mb-15">{element.post}</p>
-                <p className="color-green fw-bold fs-18">Details</p>
+                <p className="color-green fw-bold fs-18">
+                  <NavLink to={`/post/` + element.id}>Details</NavLink>
+                </p>
               </div>
             ))}{' '}
           </>
