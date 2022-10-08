@@ -27,7 +27,7 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   if (isAuth === null) {
-    return <h1>Trwa ładowanie aplikacji...</h1>;
+    return <h1>Loading application...</h1>;
   }
 
   return (
