@@ -11,6 +11,8 @@ import { PostDetails } from './components/posts/single-post';
 import { Footer } from './components/footer/footer';
 import { About } from './components/about/about';
 import { UserProfile } from './components/UserProfile/UserProfile';
+import wentWrong from './img/pat.gif';
+
 export const App = () => {
   const { isAuth } = useContext(UserContext);
   return (
@@ -37,7 +39,8 @@ export const App = () => {
             element={
               <div className="container t-center ">
                 <h1 className="header-1 p-50">404 - Page not found</h1>
-                <p>This page does not exist or requires to log in.</p>
+                <p>Something went wrong! Page does not exist. We will not work on it :p</p>
+                <img src={wentWrong} className="went-wrong-gif" alt="Something went wrong!" />
               </div>
             }
           />
