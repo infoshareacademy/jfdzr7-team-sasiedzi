@@ -1,6 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { useContext } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 
 import { auth } from '../../api/firebase';
 import { UserContext } from '../../helpers/apiCommunication';
@@ -40,6 +42,9 @@ export const Navbar = () => {
         <button className="btn btn-2 ml-10" onClick={onClickLogOut}>
           Log out
         </button>
+        <NavLink className="navbar-icon" to={`/`}>
+          <FontAwesomeIcon className="navbar-icon" icon={faHouse} />
+        </NavLink>
         <button onClick={openNav} className="btn nav-hamburger ml-10">
           <div></div>
           <div></div>
@@ -51,18 +56,18 @@ export const Navbar = () => {
           &times;
         </a>
         <div className="nav-mobile-content">
-          <NavLink className="navbar-link" to={`/help-board`}>
+          <NavLink className="navbar-link" to={`/help-board`} onClick={closeNav}>
             I want to help
           </NavLink>
 
-          <NavLink className="navbar-link" to={`/need-help`}>
+          <NavLink className="navbar-link" to={`/need-help`} onClick={closeNav}>
             I need help
           </NavLink>
-          <NavLink className="navbar-link" to={`/how`}>
+          <NavLink className="navbar-link" to={`/how`} onClick={closeNav}>
             How it works
           </NavLink>
 
-          <Link className="btn" to={`/profile`}>
+          <Link className="btn" to={`/profile`} onClick={closeNav}>
             Profile
           </Link>
 
@@ -70,6 +75,9 @@ export const Navbar = () => {
             Log out
           </button>
         </div>
+        <NavLink className="navbar-icon" to={`/`}>
+          <FontAwesomeIcon className="navbar-icon" icon={faHouse} />
+        </NavLink>
       </nav>
     </>
   ) : (
@@ -92,10 +100,10 @@ export const Navbar = () => {
           &times;
         </a>
         <div className="nav-mobile-content">
-          <NavLink className="btn" to={`/`}>
+          <NavLink className="btn" to={`/`} onClick={closeNav}>
             Login
           </NavLink>
-          <NavLink className="btn btn-2 ml-10" to={`/`}>
+          <NavLink className="btn btn-2 ml-10" to={`/`} onClick={closeNav}>
             Register
           </NavLink>
         </div>

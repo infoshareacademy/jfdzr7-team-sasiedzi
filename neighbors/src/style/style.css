@@ -126,6 +126,18 @@ p {
   text-decoration: none;
 }
 
+.navbar-icon {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  font-size: 1.1em;
+}
+.navbar-icon:hover,
+.navbar-icon:focus,
+.navbar-icon:active
+ {
+  color: var(--color-green);
+ }
 .navbar-link:hover,
 .navbar-link:focus,
 .navbar-link:active {
