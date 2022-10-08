@@ -12,6 +12,7 @@ const PostWrapper = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
 `;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const PostImg = styled.img`
   width: 50%;
   max-width: 500px;

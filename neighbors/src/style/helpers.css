@@ -13,15 +13,13 @@
 .bg-white {
   background-color: #fff;
 }
-.bg-gradient {
-  background: radial-gradient(100% 197.75% at 0% 6.01%, #00bfa6 34.04%, #ffffff 34.05%, #f5f5f5 100%) no-repeat;
-  background-attachment: fixed;
-  min-height: 90vh;
-}
 .no-wrap {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.inline-block {
+  display: inline-block;
 }
 /* ##### MARGIN & PADDING ##### */
 .m-0,
@@ -445,9 +443,7 @@
 
 .t-center {text-align: center;}
 
-@media screen and (max-width: 1400px) {
-  .bg-gradient {
-    background-size: 200%;
-  }
+.w-100, .full {
+  width: 100%;
 }
 

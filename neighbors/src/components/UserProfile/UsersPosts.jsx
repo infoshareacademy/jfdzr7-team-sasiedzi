@@ -66,37 +66,39 @@ export const UsersPosts = () => {
             <h2 className="header-2 mb-15">{element.postTitle}</h2>
             <p className="no-wrap mb-15">{element.post}</p>
 
-            <button data-id={element.id} onClick={onClickDelate}>
-              Delete
-            </button>
-            <button data-id={element.id} onClick={onClickUpdate}>
+            <button className="btn mr-10" data-id={element.id} onClick={onClickUpdate}>
               Update
+            </button>
+            <button className="btn btn-2" data-id={element.id} onClick={onClickDelate}>
+              Delete
             </button>
             {edit === element.id ? (
               <form>
                 <input
                   className="input-field"
                   type="text"
-                  value={editInput.postTitle}
                   id="postTitle"
                   name="postTitle"
                   onChange={onChangeEdit}
-                  placeholder={element.postTitle}
+                  defaultValue={element.postTitle}
                 ></input>
+                <br />
                 <textarea
-                  className="input-field"
+                  className="input-field full"
                   onChange={onChangeEdit}
-                  value={editInput.post}
+                  defaultValue={element.post}
                   type="text"
                   id="post"
                   name="post"
-                  placeholder={element.post}
                 ></textarea>
-                <button type="submit" data-id={element.id} onClick={onClickSubmitChanges}>
+                <br />
+                <button className="btn mr-10" type="submit" data-id={element.id} onClick={onClickSubmitChanges}>
                   {' '}
                   Sumbit Changes
                 </button>
-                <button onClick={onClickCancelEdit}>Cancel edit</button>
+                <button className="btn btn-2" onClick={onClickCancelEdit}>
+                  Cancel edit
+                </button>
               </form>
             ) : (
               ''

@@ -41,7 +41,7 @@ export const PostList = () => {
       <div className="container">
         <div className="pt-15 pb-15 bg-white">
           <h1 className="header-1 mb-15">Search for helping hands</h1>
-          <div className="row">
+          <div className="row posts-search-row">
             <div className="col-auto">
               <p>
                 <label htmlFor="city">City</label>
@@ -70,8 +70,7 @@ export const PostList = () => {
               />
             </div>
             <div className="col-auto">
-              <br />
-              <button onClick={onClickSearch} className="btn m-10">
+              <button disabled={disabledButton} onClick={onClickSearch} className="btn m-10">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </button>
             </div>

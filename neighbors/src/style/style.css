@@ -15,19 +15,34 @@ body {
 }
 p {
   margin-bottom: 10px;
+  line-height: normal;
 }
+
+.bg-gradient {
+  background: radial-gradient(100% 197.75% at 0% 6.01%, #00bfa6 34.04%, #ffffff 34.05%, #f5f5f5 100%) no-repeat;
+  background-attachment: fixed;
+  min-height: 90vh;
+}
+
+@media screen and (max-width: 1400px) {
+  .bg-gradient {
+    background-size: 200%;
+  }
+}
+
 .btn {
   display: inline-block;
+  cursor: pointer;
   padding: 0 10px;
-  height: 30px;
+  height: 35px;
   min-width: 100px;
   font-size: 14px;
   font-weight: bold;
   color: #fff;
-  line-height: 24px;
+  line-height: 29px;
   text-align: center;
   border: solid 2px var(--color-green);
-  border-radius: 15px;
+  border-radius: 25px;
   background-color: var(--color-green);
   transition: all 0.2s;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -47,6 +62,12 @@ p {
   color: var(--color-secondary);
   background-color: #fff;
 }
+.btn:disabled {
+  background-color: #aaa;
+  border-color: #aaa;
+  color: #fff;
+  cursor: not-allowed;
+}
 .card {
   background-color: #fff;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -55,9 +76,9 @@ p {
 }
 .input-field {
   background-color: #f0f0f0;
-  height: 30px;
+  height: 35px;
   margin: 10px 0;
-  border-radius: 55px;
+  border-radius: 25px;
   padding: 10px;
   outline: none;
   border: none;
@@ -70,7 +91,7 @@ p {
   height: 30px;
   max-width: 80px;
   margin: 10px 0;
-  border-radius: 55px;
+  border-radius: 25px;
   padding: 10px;
   outline: none;
   border: none;
@@ -128,7 +149,7 @@ p {
 
 .navbar-link:hover,
 .navbar-link:focus,
-.navbar-link:active {
+.navbar-link.active {
   border-bottom: 2px solid var(--color-green);
   color: var(--color-green);
 }
@@ -178,7 +199,9 @@ p {
 .nav-mobile-content a {
   margin: 10px;
 }
-
+.posts-search-row {
+  align-items: flex-end;
+}
 @media only screen and (max-width: 768px) {
   .navbar a {
     display: none;
