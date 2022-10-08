@@ -1,10 +1,10 @@
-import { documentId, updateDoc } from '@firebase/firestore';
+import { updateDoc, doc } from '@firebase/firestore';
 import { useEffect, useState } from 'react';
-import { onSnapshot, where, query, doc } from '@firebase/firestore';
 
 import { db } from '../../api/firebase';
 import { usersData } from '../../helpers/apiCommunication';
 import { auth } from '../../api/firebase';
+import { getUserProfileInfo } from '../../helpers/apiCommunication';
 
 import { UsersPosts } from './UsersPosts';
 export const UserProfile = () => {
@@ -35,12 +35,7 @@ export const UserProfile = () => {
   };
 
   const onClickSubmit = () => {
-    //osobna funkcja
-    onSnapshot(query(usersData, where(documentId(), '==', `${auth.currentUser.uid}`)), (querySnapshot) => {
-      querySnapshot.docs.map((element) => {
-        setProfileData({ id: element.id, ...element.data() });
-      });
-    });
+    getUserProfileInfo(usersData, auth.currentUser.uid, setProfileData);
 
     const userDataCollection = doc(db, 'Users', `${auth.currentUser.uid}`);
     updateDoc(userDataCollection, {
@@ -58,11 +53,7 @@ export const UserProfile = () => {
 
   // Displaying profile data
   useEffect(() => {
-    onSnapshot(query(usersData, where(documentId(), '==', `${auth.currentUser.uid}`)), (querySnapshot) => {
-      querySnapshot.docs.map((element) => {
-        setProfileData({ id: element.id, ...element.data() });
-      });
-    });
+    getUserProfileInfo(usersData, auth.currentUser.uid, setProfileData);
   }, []);
   return (
     <>
