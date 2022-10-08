@@ -80,7 +80,8 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
             {offerHelpPosts.map((element) => (
               <div key={element.id} className="card p-20 mb-10">
                 <p className="mb-10">
-                  {userArray[element.userID].city}, {userArray[element.userID].street}
+                  {userArray[element.userID].city ? userArray[element.userID].city : ''}
+                  {userArray[element.userID].street ? userArray[element.userID].street : ''}
                 </p>
                 <h2 className="header-2 mb-15">{element.postTitle}</h2>
                 <p className="no-wrap mb-15">{element.post}</p>
