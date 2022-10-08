@@ -1,4 +1,4 @@
-import { collection } from 'firebase/firestore';
+import { collection, onSnapshot, where, query, documentId } from 'firebase/firestore';
 import { useEffect, useState, createContext } from 'react';
 import { PropTypes } from 'prop-types';
 import { onAuthStateChanged } from '@firebase/auth';
@@ -16,7 +16,6 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log('auth status changed', user);
       if (user) {
         setIsAuth(true);
         setUser(user);
@@ -47,4 +46,12 @@ export const getOfferHelpPosts = (querySnapshot) => {
     id: doc.id,
     ...doc.data(),
   }));
+};
+
+export const getUserProfileInfo = (usersData, authID, setProfileData) => {
+  onSnapshot(query(usersData, where(documentId(), '==', `${authID}`)), (querySnapshot) => {
+    querySnapshot.docs.map((element) => {
+      return setProfileData({ id: element.id, ...element.data() });
+    });
+  });
 };

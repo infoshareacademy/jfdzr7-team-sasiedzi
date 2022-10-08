@@ -12,13 +12,15 @@ import { UserProfile } from './components/UserProfile/UserProfile';
 
 import { Footer } from './components/footer/footer';
 import { About } from './components/about/about';
+import { UserProfile } from './components/UserProfile/UserProfile';
 export const App = () => {
   const { isAuth } = useContext(UserContext);
   return (
     <>
 
       <Navbar />
-      <Routes>
+      <UserProfile></UserProfile>
+      { <Routes>
         {isAuth ? (
           <>
             <Route path="/" element={<HomePanel />} />
@@ -41,8 +43,11 @@ export const App = () => {
             </div>
           }
         />
+      </Routes> }
+
       </Routes>
       <Footer />
+
     </>
   );
 };
