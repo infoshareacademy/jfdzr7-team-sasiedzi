@@ -16,25 +16,25 @@ export const HomePanel = () => {
       link: '/help-board',
       svg: posts,
       title: 'Posts',
-      description: 'This is a description',
+      description: 'See who needs help',
     },
     {
       link: '/need-help',
       svg: addPost,
       title: 'Add post',
-      description: 'This is a second description',
+      description: 'Add a post to search for help',
     },
     {
-      link: '/profil',
+      link: '/profile',
       svg: profile,
       title: 'Profile',
-      description: 'This is a third description',
+      description: 'Your profile and posts',
     },
     {
       link: '/help-board',
       svg: help,
       title: 'Help',
-      description: 'This is a fourth description',
+      description: 'How does it work?',
     },
   ];
 
