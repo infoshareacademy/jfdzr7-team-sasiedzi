@@ -12,7 +12,7 @@ export const UsersPosts = () => {
 
   const [renderPosts, setRenderPosts] = useState(null); // triger render collection of posts
   const [editInput, setEditInput] = useState(clearForm);
-  const [edit, setEdit] = useState(null); // it lets edit single post
+  const [edit, setEdit] = useState(null); // it lets edit single post currentSinglePostID -> zmiana nazwy.
   const onClickDelate = (e) => {
     const idRemovedPost = e.target.dataset.id;
     deleteDoc(doc(db, 'Posts-need-help', `${idRemovedPost}`));
@@ -27,7 +27,7 @@ export const UsersPosts = () => {
     setEditInput(clearForm);
   };
   const onClickSubmitChanges = (e) => {
-    let uniqId = new Date();
+    let uniqId = Date.now();
     e.preventDefault();
 
     const idOfPostToSubmit = e.target.dataset.id;
@@ -101,7 +101,6 @@ export const UsersPosts = () => {
             ) : (
               ''
             )}
-            {/* <NavLink to={`/post/` + element.id}>Details</NavLink> */}
           </div>
         ))
       ) : (

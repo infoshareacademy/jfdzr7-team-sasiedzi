@@ -35,6 +35,7 @@ export const UserProfile = () => {
   };
 
   const onClickSubmit = () => {
+    //osobna funkcja
     onSnapshot(query(usersData, where(documentId(), '==', `${auth.currentUser.uid}`)), (querySnapshot) => {
       querySnapshot.docs.map((element) => {
         setProfileData({ id: element.id, ...element.data() });
@@ -150,6 +151,7 @@ export const UserProfile = () => {
               </form>
             </>
           ) : (
+            // osobny komponent
             <>
               <button className="btn" onClick={onClickEdit}>
                 Edit your data

@@ -15,8 +15,8 @@ export const App = () => {
   return (
     <>
       <Navbar />
-
-      <Routes>
+      <UserProfile></UserProfile>
+      {/* <Routes>
         {isAuth ? (
           <>
             <Route path="/" element={<HomePanel />} />
@@ -39,7 +39,7 @@ export const App = () => {
             </div>
           }
         />
-      </Routes>
+      </Routes> */}
     </>
   );
 };
