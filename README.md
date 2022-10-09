@@ -10,11 +10,11 @@ The condition for the possibility of action on our site is obligatory registrati
 
 ## Features
 
-- Registration and Login
-- Adding posts
-- Firebase
-- Searching for posts by localization
-- Possibility to edit your own personal data
+- Registration and Login :man_technologist:
+- Adding posts :memo:
+- Firebase :fire:
+- Searching for posts by localization :mag:
+- Possibility to edit your own personal data :man::woman:
 
 
 
