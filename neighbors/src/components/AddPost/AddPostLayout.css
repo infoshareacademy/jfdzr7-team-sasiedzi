@@ -14,7 +14,7 @@
   padding: 20px 100px;
 }
 
-.icon {
+.icon, .addpost-icon {
   font-size: 10em;
   color: #acacac;
 }
@@ -98,7 +98,7 @@ textarea {
 }
 
 @media screen and (max-width: 391px) {
-  .icon {
+  .addpost-icon {
     width: 100px;
     height: 100px;
   }
