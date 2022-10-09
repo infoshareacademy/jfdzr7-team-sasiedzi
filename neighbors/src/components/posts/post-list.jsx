@@ -38,42 +38,43 @@ export const PostList = () => {
   }, [searchFor.city]);
   return (
     <main>
-      <div className="container">
-        <div className="pt-15 pb-15 bg-white">
-          <h1 className="header-1 mb-15">Search for helping hands</h1>
-          <div className="row">
-            <div className="col-auto">
-              <p>
-                <label htmlFor="city">City</label>
-              </p>
-              <input
-                type="text"
-                className="input-field"
-                value={searchFor.city}
-                name="city"
-                onChange={onChange}
-                id="city"
-              />
-            </div>
-            <div className="col-auto">
-              <p>
-                <label htmlFor="street">Street</label>
-              </p>
-              <input
-                type="text"
-                name="street"
-                disabled={avaibleToSearchForSteet}
-                value={searchFor.street}
-                onChange={onChange}
-                className="input-field"
-                id="street"
-              />
-            </div>
-            <div className="col-auto">
-              <br />
-              <button onClick={onClickSearch} className="btn m-10">
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </button>
+      <div className="shadow">
+        <div className="container">
+          <div className="pt-15 pb-15 bg-white">
+            <h1 className="header-1 mb-15">Search for helping hands</h1>
+            <div className="row posts-search-row">
+              <div className="col-auto">
+                <p>
+                  <label htmlFor="city">City</label>
+                </p>
+                <input
+                  type="text"
+                  className="input-field"
+                  value={searchFor.city}
+                  name="city"
+                  onChange={onChange}
+                  id="city"
+                />
+              </div>
+              <div className="col-auto">
+                <p>
+                  <label htmlFor="street">Street</label>
+                </p>
+                <input
+                  type="text"
+                  name="street"
+                  disabled={avaibleToSearchForSteet}
+                  value={searchFor.street}
+                  onChange={onChange}
+                  className="input-field"
+                  id="street"
+                />
+              </div>
+              <div className="col-auto">
+                <button disabled={disabledButton} onClick={onClickSearch} className="btn m-10">
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -53,7 +53,7 @@ export const Registration = () => {
 
   return (
     <>
-      <form action="" className="sign-up-form">
+      <form action="" className="form sign-up-form">
         <h2 className="title">Sign up</h2>
         <div>
           <label htmlFor="firstName">First name: </label>

@@ -9,7 +9,7 @@
   height: 150px;
 }
 
-a {
+.slider a {
   text-decoration: none;
 }
 
@@ -18,7 +18,7 @@ a {
   scrollbar-width: none;
   scroll-behavior: smooth;
   position: relative;
-  height: 100vh;
+  min-height: 90vh;
   width: 100%;
   display: flex;
   gap: 20px;
@@ -66,9 +66,8 @@ a {
 .homepanel_post-box:hover,
 .homepanel_post-box:focus {
   color: var(--color-green);
-  max-width: 330px;
-font: 1.2em sans-serif;
-  border: 8px solid rgba(0, 0, 0, 0);
+  border: 2px solid var(--color-green);
+  transform: scale(1.1);
 }
 
 /*   1440  900   880    390 */

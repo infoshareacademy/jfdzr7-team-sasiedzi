@@ -8,7 +8,7 @@ export const RightPanel = ({ handleClick }) => {
     <div className="panel right-panel">
       <div className="content">
         <h3>One of us?</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem dolorum expedita?</p>
+        <p>Login to see and add posts.</p>
         <button onClick={handleClick} className="btn transparent" id="sign-in-btn">
           Sign in
         </button>

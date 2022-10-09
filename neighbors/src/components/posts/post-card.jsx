@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { onSnapshot, query, orderBy, limit, where, documentId } from 'firebase/firestore';
+import { onSnapshot, query, limit, where } from 'firebase/firestore';
 import { PropTypes } from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
       let colection = {};
       if (!searchFor.street) {
         onSnapshot(query(usersData, where('city', '==', `${searchFor.city}`)), (querySnapshot) => {
-          const q = querySnapshot.docs.forEach((element) => {
+          querySnapshot.docs.forEach((element) => {
             colection[element.id] = { ...element.data() };
           });
           const id = querySnapshot.docs.map((doc) => ({
@@ -68,13 +68,14 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
         });
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startSearch]);
   setStartSearch(false);
   return (
     <>
       {offerHelpPosts && userArray ? (
         thereIsNoPost ? (
-          <>There is no needs in area.</>
+          <>There are no needs in area.</>
         ) : (
           <>
             {offerHelpPosts
@@ -82,15 +83,14 @@ export const Post = ({ searchFor, startSearch, setStartSearch }) => {
               .map((element) => (
                 <div key={element.id} className="card p-20 mb-10">
                   <p className="mb-10">
-                    {/* {console.log(userArray, 'userArray', element.userID, ':iserID')} */}
                     {userArray[element.userID].city ? userArray[element.userID].city : ''}, {''}
                     {userArray[element.userID].street ? userArray[element.userID].street : ''}
                   </p>
                   <h2 className="header-2 mb-15">{element.postTitle}</h2>
                   <p className="no-wrap mb-15">{element.post}</p>
-                  <p className="color-green fw-bold fs-18">
-                    <NavLink to={`/post/` + element.id}>Details</NavLink>
-                  </p>
+                  <NavLink className="btn" to={`/post/` + element.id}>
+                    Details
+                  </NavLink>
                 </div>
               ))}{' '}
           </>
