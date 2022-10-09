@@ -1,5 +1,5 @@
 
-# Neighbors App 
+# Neighbors App :houses:
 
 An app created to help people in the neighborhood contact each other for help with various tasks.
 
