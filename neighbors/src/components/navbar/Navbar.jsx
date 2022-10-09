@@ -3,6 +3,7 @@ import { signOut } from 'firebase/auth';
 import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router';
 
 import { auth } from '../../api/firebase';
 import { UserContext } from '../../helpers/apiCommunication';
@@ -16,9 +17,10 @@ function closeNav() {
 }
 
 export const Navbar = () => {
+  const navigation = useNavigate();
   const onClickLogOut = () => {
     signOut(auth);
-    window.location.href = '../';
+    navigation('/');
   };
   const { isAuth } = useContext(UserContext);
   return isAuth ? (
