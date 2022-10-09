@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/jfdzr7-team-sasiedzi/static/css/main.43bf651b.css",
-    "main.js": "/jfdzr7-team-sasiedzi/static/js/main.480bd478.js",
+    "main.css": "/jfdzr7-team-sasiedzi/static/css/main.b6b1a1c2.css",
+    "main.js": "/jfdzr7-team-sasiedzi/static/js/main.817534f7.js",
     "static/media/pat.gif": "/jfdzr7-team-sasiedzi/static/media/pat.a35b5d3d4de2ca130d5e.gif",
     "static/media/help.svg": "/jfdzr7-team-sasiedzi/static/media/help.e076a6c22abdd7bc5f4b29eec308989b.svg",
     "static/media/register.svg": "/jfdzr7-team-sasiedzi/static/media/register.50c7e2e379118f7c67ddf614bff25afd.svg",
     "static/media/posts.svg": "/jfdzr7-team-sasiedzi/static/media/posts.c069a2914a15e7c92d2c28185ef9fc32.svg",
     "static/media/profile.svg": "/jfdzr7-team-sasiedzi/static/media/profile.bd5b5ef10c970865050426e4fbca7bf9.svg",
-    "static/media/login.svg": "/jfdzr7-team-sasiedzi/static/media/login.bca59682f8698731723ed5d65d34d6d9.svg",
+    "static/media/login.svg": "/jfdzr7-team-sasiedzi/static/media/login.dde6b32bd150922130e8dc28a4357d8d.svg",
     "static/media/addPost.svg": "/jfdzr7-team-sasiedzi/static/media/addPost.d917e3c1a6d0c0d3b21c969bd8a56b5a.svg",
     "index.html": "/jfdzr7-team-sasiedzi/index.html",
-    "main.43bf651b.css.map": "/jfdzr7-team-sasiedzi/static/css/main.43bf651b.css.map",
-    "main.480bd478.js.map": "/jfdzr7-team-sasiedzi/static/js/main.480bd478.js.map"
+    "main.b6b1a1c2.css.map": "/jfdzr7-team-sasiedzi/static/css/main.b6b1a1c2.css.map",
+    "main.817534f7.js.map": "/jfdzr7-team-sasiedzi/static/js/main.817534f7.js.map"
   },
   "entrypoints": [
-    "static/css/main.43bf651b.css",
-    "static/js/main.480bd478.js"
+    "static/css/main.b6b1a1c2.css",
+    "static/js/main.817534f7.js"
   ]
 }
