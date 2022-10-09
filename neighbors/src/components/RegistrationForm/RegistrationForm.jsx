@@ -1,7 +1,7 @@
 import '../mainLayout.css';
 
 import { useState } from 'react';
-import { addDoc, setDoc, doc } from 'firebase/firestore';
+import { setDoc, doc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 
 import { firebaseErrors } from '../../api/firebase';
@@ -53,7 +53,7 @@ export const Registration = () => {
 
   return (
     <>
-      <form action="" className="sign-up-form">
+      <form action="" className="form sign-up-form">
         <h2 className="title">Sign up</h2>
         <div>
           <label htmlFor="firstName">First name: </label>

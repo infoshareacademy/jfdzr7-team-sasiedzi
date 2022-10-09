@@ -10,6 +10,7 @@
 .row {
     display: flex;
     flex-wrap: wrap;
+    margin: -10px; /*col padding hack*/
   }
 
 .col, .col-auto {

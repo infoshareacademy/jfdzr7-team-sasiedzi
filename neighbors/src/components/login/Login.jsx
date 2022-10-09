@@ -18,20 +18,20 @@ export function Login() {
   const onClick = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, signIn.email, signIn.password)
-      .then((jwt) => {})
+      .then(() => {})
       .catch((e) => {
         alert(firebaseErrors[e.code]);
       });
   };
   return (
     <>
-      <form action="" className="sign-in-form">
+      <form action="" className="form sign-in-form">
         <h2 className="title">Sign in</h2>
-        <div className="input-field">
+        <div className="input-field_container">
           <FontAwesomeIcon className="icon" icon={faUser} />
           <input type="text" name="email" onChange={onChange} placeholder="Email" />
         </div>
-        <div className="input-field">
+        <div className="input-field_container">
           <FontAwesomeIcon className="icon" icon={faLock} />
           <input type="password" name="password" onChange={onChange} placeholder="Password" />
         </div>

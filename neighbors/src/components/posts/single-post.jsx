@@ -12,6 +12,7 @@ const PostWrapper = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
 `;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const PostImg = styled.img`
   width: 50%;
   max-width: 500px;
@@ -23,20 +24,29 @@ const PostImg = styled.img`
 
 export const PostDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingPost, setIsLoadingPost] = useState(true);
   const [postDetails, setPostDetails] = useState({});
+  const [userDetails, setUserDetails] = useState(null);
   const { id } = useParams();
 
-  const getPost = () => {
-    getDoc(doc(db, 'Posts-need-help', id)).then((querySnapshot) => {
-      setPostDetails(querySnapshot.data());
+  const getUser = () => {
+    getDoc(doc(db, 'Users', postDetails.userID)).then((querySnapshot) => {
+      setUserDetails(querySnapshot.data());
       setIsLoading(false);
     });
   };
 
+  const getPost = () => {
+    getDoc(doc(db, 'Posts-need-help', id)).then((querySnapshot) => {
+      setPostDetails(querySnapshot.data());
+      setIsLoadingPost(false);
+    });
+  };
+
   useEffect(() => {
-    getPost();
+    isLoadingPost ? getPost() : getUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isLoadingPost]);
 
   return isLoading ? (
     <div className="container">
@@ -52,28 +62,21 @@ export const PostDetails = () => {
               <div className="col pl-0 mb-10">
                 <p>{postDetails.post}</p>
               </div>
-              <PostImg
-                className="mb-10"
-                src="https://ireland.apollo.olxcdn.com/v1/files/il1x1kwevmjv3-PL/image;s=1000x700"
-              />
-              {
-                //obrazek jeśli zrobimy dodawanie ich do postów
-              }
             </PostWrapper>
             <hr className="mb-20" />
             <p className="color-green fw-bold fs-18 mb-10">
-              {postDetails.userFirstName} {postDetails.userLastName}
+              {userDetails.firstName} {userDetails.lastName}
             </p>
             <p className="fs-16 mb-15">
-              {postDetails.userCity}, {postDetails.userStreet}
+              {userDetails.city}, {userDetails.street}
             </p>
             <p className="fs-16 fw-bold mb-10">Contact me:</p>
-            <a href="#" className="btn">
-              Send a message
-              {
-                //powinno otwierać te wiadomości, ale raczej nie zdążymy ich zrobić. Więc - tutaj mail lub telefon?
-              }
-            </a>
+            <p>
+              <a href={'mailto:' + userDetails.email}>{userDetails.email}</a>
+            </p>
+            <p>
+              <a href={'tel:' + userDetails.phoneNumber}>{userDetails.phoneNumber}</a>
+            </p>
           </div>
         </div>
       </main>

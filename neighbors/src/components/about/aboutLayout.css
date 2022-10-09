@@ -1,0 +1,59 @@
+.containerAbout {
+  position: relative;
+  min-height: 100vh;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: auto;
+}
+
+.about-header {
+  text-align: center;
+  font-size: 2em;
+}
+.about-paragraph {
+  text-align: left;
+  padding: 10px 20px;
+  font-size: 1.5em;
+}
+.left {
+  width: 100%;
+  margin: 0 10px;
+}
+
+.right {
+  line-height: 200%;
+}
+
+@media screen and (max-width: 1400px) {
+  .bg-gradient {
+    background-size: 200%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .left {
+    margin: 0;
+  }
+  .post-box {
+    padding-top: 50px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+  .left {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  p {
+    padding: 5px 5px;
+  }
+}
